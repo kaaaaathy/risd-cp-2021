@@ -166,20 +166,12 @@ body {
 	}
 
 	.touch-device #menu-open{
-		width: 30px;
+		/* width: 30px; */
 		height: 35px;
 		cursor: pointer;
 	}
 
 
-	.touch-device #menu-open div {
-	    background-color: black;
-	    border: 1px solid black;
-	    border-radius: 2px 2px 2px 2px;
-	    height: 15%;
-	    margin-bottom: 15%;
-	    width: 90%;
-	}
 	.touch-device .about{
 		width: auto;
 		display: none;
@@ -214,12 +206,10 @@ body {
     right: 0px;
 		top: 0px;
 	}
-	/* #logo{
-        display: none;
-	}
-    #logo-touch {
-        display: block;
-    } */
+
+  #binder-clip{
+    display: none;
+  }
 	#navigation{
 		display: none;
 		text-indent: -1.5em;
