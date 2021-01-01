@@ -41,9 +41,6 @@ $(function() {
 		});
 
 		$("#menu").draggable({ cancel: "li" });
-		if(window.innerWidth < 768) {
-				$("#menu").draggable('disable').attr('style','');
-		};
     	// $( "div, p" ).disableSelection();
 	});
 
@@ -62,10 +59,6 @@ $(function() {
             $("#navigation").attr('style','');
         };
     });
-
-
-
-
 
 	//little fix for the iframe size on mobile
 	//mobile hack
