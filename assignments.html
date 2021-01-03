@@ -2,115 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap');
-
-body {
-  margin: 0 100px;
-  color: black;
-  font-weight: normal;
-  font-family: 'DM Mono','Inconsolata','Courier',monospace;
-}
-
-.header{
-  margin-top:100px;
-  padding-bottom: 40px;
-}
-
-/* font styles */
-
-h2{
-  font-weight: bold;
-  font-size: 14px;
-}
-
-
-p, li {
-  font-family: 'DM Mono','Inconsolata','Courier',monospace;
-  font-size: 14px;
-  line-height: 24px;
-}
-
-
-/* table styles */
-#schedule {
-
-}
-
-.row {
-  border-bottom: 1px solid black;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.contents {
-  padding: 10px 0px;
-  margin-left:  160px;
-  color: black;
-}
-
-.project{
-  display: flex;
-  justify-content: flex-start;
-  align-items: baseline;
-  padding: 20px 0px;
-  border-top: 1px solid black;
-
-}
-
-.project:hover{
-  color: blue;
-
-}
-.project-text {
-  font-family: 'DM Mono','Inconsolata','Courier',monospace;
-  font-size: 14px;
-  font-weight: bold;
-  /* padding-right: 30px; */
-  width:180px;
-}
-
-.due{
-  background-color: yellow;
-  margin-right: 40px;
-  font-weight: bold;
-  font-size: 14px;
-
-}
-
-.project-h, .header {
-  font-weight: normal;
-  font-family: Times, 'Times New Roman', serif;
-  font-size:24px;
-}
-
-/* Closable button inside the container tab */
-.closebtn {
-  float: right;
-  color: black;
-  font-size: 24px;
-  margin-top: -70px;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.contents{
-  margin-left:160px;
-  padding-bottom: 40px;
-  max-width: 500px;
-}
-
-@media only screen and (max-width: 768px) {
-  body {
-    margin: 0 40px;
-  }
-
-}
+<link rel="stylesheet" type="text/css" href="accordion.css" media="screen"/>
 
 </style>
 
@@ -120,98 +12,93 @@ p, li {
 <body>
 
 <div class="header">
-  &#10000; Schedule
+  &#10000; Assignments
 </div>
 
 <div id="schedule">
-<div class="row">
 
-    <div class="project" onclick="openTab('p1');">
-      <div class="due">Due 3/15</div>
-      <div class ="project-text">
-        Project 1
-      </div>
-
-      <div class ="project-h">
-        Crowdsourced text performance
-      </div>
-    </div>
-    <div id="p1" class="contents" style="display:none;">
-      <div onclick="this.parentElement.style.display='none'" class="closebtn">&#8593;</div>
-      <li>Any medium & means of crowdsourcing — web, cut up, googledocs, google forms, copy paste</li>
-      <li>Read out loud a portion of your text</li>
-      <li>Do not write your own text</li>
-
+<div class = "row" v-for="(project,index) in projects">
+    <div class = "item" @click="project.shown = !project.shown">
+      <div class ="due">{{project.date}}</div>
+      <div class ="item-project">{{project.project}}</div>
+      <div class ="item-heading">{{project.name}}</div>
     </div>
 
-    <div class="project" onclick="openTab('p2');">
-      <div class="due">Due 3/29</div>
-      <div class ="project-text">
-        Project 2
-      </div>
+    <!-- <div class="caret">X</div> -->
 
-      <div class ="project-h">
-        Web based text performance
-      </div>
-    </div>
-    <div id="p2" class="contents" style="display:none;">
-      <div onclick="this.parentElement.style.display='none'" class="closebtn">&#8593;</div>
-      <li>Use randomness</li>
-      <li>Republish an existing corpus or write your own</li>
-      <li>consider the gesture of reading: scrolling, clicking, moving your body?</li>
+    <!-- hidden content starts here -->
+    <div class = "contents assignments" v-if="project.shown==true">
+      <div v-html="project.content"></div>
 
     </div>
-
-    <div class="project" onclick="openTab('p3');">
-      <div class="due">Due 4/26</div>
-      <div class ="project-text">
-        Project 3
-      </div>
-
-      <div class ="project-h">
-        Sketch Series
-      </div>
-    </div>
-    <div id="p3" class="contents" style="display:none;">
-      <div onclick="this.parentElement.style.display='none'" class="closebtn">&#8593;</div>
-      <li>Sketch 3.1: Scale</li>
-      <li>Sketch 3.2: Body</li>
-      <li>Sketch 3.3: Work</li>
-      <li>Sketch 3.4: Secrets</li>
-
-    </div>
-
-      <div class="project" onclick="openTab('p4');">
-        <div class="due">Due 4/26</div>
-        <div class ="project-text">
-          Final Project
-        </div>
-
-        <div class ="project-h">
-          writing()
-        </div>
-      </div>
-      <div id="p4" class="contents" style="display:none;">
-        <div onclick="this.parentElement.style.display='none'" class="closebtn">&#8593;</div>
-        <p>Create a new tool or procedure for writing. Consider relationship to the body. Create something meant to be read out loud.  We will have a zoom reading. Consider how language is transmitted through pixel space.</p>
-
-      </div>
-
-    </div>
-
 </div>
+<!-- end row element -->
+
 </div>
 
 
 <script>
-function openTab(tabName) {
-  var i, x;
-  x = document.getElementsByClassName("contents");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  document.getElementById(tabName).style.display = "block";
-}
+
+var schedule = new Vue({
+    el: "#schedule",
+    data: {
+      projects: [
+            {
+              shown:false,
+              date:"Due 3/01",
+              project:"Project 0",
+              name:"Transcription",
+              content:``
+            },
+          {
+          		shown:false,
+              date:"Due 3/15",
+          		project:"Project 1",
+              name:"Crowdsourced text performance",
+          		content:`
+              <li>Any medium & means of crowdsourcing — web, cut up, googledocs, google forms, copy paste</li>
+              <li>Read out loud a portion of your text</li>
+              <li>Do not write your own text</li>
+              `
+
+          	},
+          	{
+          		shown:false,
+              date:"Due 3/29",
+          		project:"Project 2",
+              name:"Web based text performance",
+          		content:`
+              <li>Use randomness</li>
+              <li>Republish an existing corpus or write your own</li>
+              <li>consider the gesture of reading: scrolling, clicking, moving your body?</li>
+`
+          	},
+          	{
+          		shown:false,
+              date:"4/07–4/26",
+          		project:"Project 3",
+              name:"Sketch Series",
+          		content:`
+              <li>Sketch 3.1: Scale</li>
+              <li>Sketch 3.2: Body</li>
+              <li>Sketch 3.3: Work</li>
+              <li>Sketch 3.4: Secrets</li>
+              `
+          	},
+          	{
+          		shown:false,
+              date:"Due 5/17",
+          		project:"Final Project",
+              name:"writing()",
+          		content:`
+              Create a new tool or procedure for writing. Consider relationship to the body. Create something meant to be read out loud.  We will have a zoom reading. Consider how language is transmitted through pixel space.
+              `
+          	},
+
+      ]}
+})
+
+
 </script>
 
 </body>

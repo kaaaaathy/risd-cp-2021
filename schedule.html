@@ -2,95 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap');
-
-body {
-  margin: 0 100px;
-  color: black;
-  font-weight: normal;
-  font-family: 'DM Mono','Inconsolata','Courier',monospace;
-}
-
-.header{
-  margin-top:150px;
-  padding-bottom: 40px;
-}
-
-/* font styles */
-
-h2{
-  font-weight: bold;
-  font-size: 16px;
-}
-
-
-p, li {
-  font-size: 16px;
-  line-height: 24px;
-}
-
-
-/* table styles */
-#schedule {
-  border-top: 1px solid black;
-
-}
-
-.row {
-  border-bottom: 1px solid black;
-}
-
-.week{
-  display: flex;
-  justify-content: flex-start;
-  align-items: baseline;
-  padding: 20px 0px;
-}
-
-.week:hover{
-  color: blue;
-
-}
-.week-text {
-  font-family: 'DM Mono','Inconsolata','Courier',monospace;
-  font-size: 16px;
-  font-weight: bold;
-  /* padding-right: 30px; */
-  width:160px;
-}
-
-.week-h, .header {
-  font-weight: normal;
-  font-family: Times, 'Times New Roman', serif;
-  font-size:24px;
-}
-
-/* Closable button inside the container tab */
-.caret {
-  float: right;
-  color: black;
-  font-size: 24px;
-  margin-top: -70px;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.contents{
-  margin-left:160px;
-  padding-bottom: 40px;
-  max-width: 500px;
-}
-
-@media only screen and (max-width: 768px) {
-  body {
-    margin: 0 40px;
-  }
-
-}
-
-</style>
+<link rel="stylesheet" type="text/css" href="accordion.css" media="screen"/>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 
@@ -99,27 +11,35 @@ p, li {
 
 <div class="header">
   &#10000; Schedule
+  <h3>Still a work in progress. Link to <a href="https://docs.google.com/document/d/14twAX6Yev09Ub92XVHaRXwEOfLFVD1WVBWIv8IFky38/edit#heading=h.d13jzau21mnh" target="_blank">schedule notes</a>.
+  </h3>
 </div>
+
 
 <div id="schedule">
 
 <div class = "row" v-for="(week,index) in weeks">
-    <div class = "week" @click="shownWeek = index">
-      <div class ="week-text">{{week.date}} &nbsp;&nbsp; Week {{index+1}}</div>
-      <div class ="week-h">{{week.theme}}</div>
+    <div class = "item" @click="week.shown = !week.shown">
+      <div class ="item-text">{{week.date}} &nbsp;&nbsp; Week {{index+1}}</div>
+      <div class ="item-heading">{{week.theme}}</div>
     </div>
 
     <!-- <div class="caret">X</div> -->
 
     <!-- hidden content starts here -->
-    <div class = "contents" v-if="shownWeek==index">
-      <h2>In Class</h2>
-      <p>{{week.inClass}}</p>
+    <div class = "contents schedule" v-if="week.shown==true">
+      <h3><span class="highlight">
+        In Class</span></h3>
+        <!-- This is H3 on purpose!! -->
+      <div v-html="week.inClass"></div>
 
-      <br>
+      <h2><span class="highlight">
+        Assignments</span></h2>
+      <div v-html="week.afterClass"></div>
 
-      <h2>Assignments</h2>
-      <p>{{week.afterClass}}</p>
+      <h2><span class="highlight">
+        Links</span></h2>
+      <div v-html="week.bonus"></div>
     </div>
 </div>
 <!-- end row element -->
@@ -132,118 +52,132 @@ p, li {
 var schedule = new Vue({
     el: "#schedule",
     data: {
-      shownWeek: 0,
+      shownitem: 0,
       weeks: [
             {
-          		id:1,
+          		shown:false,
               date:"2/22",
           		theme:"OK Computational Poetics",
           		inClass:
                 `Create shared working definition of computational poetics
-                Introduce projects
-                Class community guidelines
-                Discuss transcription
-                Get set up`
+                <br>
+                <li>Introduce projects
+                <li>Class community guidelines
+                <li>Discuss transcription
+                <li>Get set up`
                 ,
               afterClass:`
-              Getting Set Up
-              Collect a list of corpuses. Add to class corpus list
-              Create a list of tools and computational practices which you feel are within your skill set
-              Sign up for presentations next week
-
-              Project 0
+              <h3>Getting Set Up</h3>
+              <li>Collect a list of corpuses. Add to class corpus list
+              <li>Create a list of tools and computational practices which you feel are within your skill set
+              <li>Sign up for presentations next item
+              <br>
+              <h3>Project 0</h3>
               Transcription assignment
-              Transcribe anything, 500+ words
-              Share reflections of transcribing on a blog post
+              <li>Transcribe anything, 500+ words
+              <li>Share reflections of transcribing on a blog post
 
-              Reading
-              Cyborg Manifesto
-              Decolonization is not a metaphor (p-)
-              `
+              <h3>Reading</h3>
+              <li>Cyborg Manifesto
+              <li>Decolonization is not a metaphor (p-)
+              `,
+              bonus:``
           	},
           	{
-          		id:2,
+          		shown:false,
               date:"3/01",
           		theme:"Computers, Language, Society",
           		inClass:``,
-              afterClass:``
+              afterClass:``,
+              bonus:``,
           	},
           	{
-          		id:3,
+          		shown:false,
               date:"3/08",
           		theme:"Programs + Poems",
           		inClass:``,
-              afterClass:``
+              afterClass:``,
+              bonus:``,
           	},
           	{
-          		id:4,
+          		shown:false,
               date:"3/15",
           		theme:"Forking Paths, Hypertext Wormholes",
           		inClass:``,
-              afterClass:``
+              afterClass:``,
+              bonus:``,
           	},
             {
-          		id:5,
+          		shown:false,
               date:"3/22",
           		theme:"Uncreative Writing, Creative Reading",
           		inClass:``,
-              afterClass:``
+              afterClass:``,
+              bonus:``,
           	},
             {
-          		id:6,
+          		shown:false,
               date:"3/29",
           		theme:"Scale, Material, Data",
           		inClass:``,
-              afterClass:``
+              afterClass:``,
+              bonus:``,
           	},
             {
-          		id:7,
+          		shown:false,
               date:"4/05",
           		theme:"Writing + Work",
           		inClass:``,
-              afterClass:``
+              afterClass:``,
+              bonus:``,
           	},
             {
-          		id:8,
+          		shown:false,
               date:"4/12",
           		theme:"Body + Performance",
           		inClass:``,
-              afterClass:``
+              afterClass:``,
+              bonus:``,
           	},
             {
-          		id:9,
+          		shown:false,
               date:"4/19",
           		theme:"Secrets, Embeddings, Encodings",
           		inClass:``,
-              afterClass:``
+              afterClass:``,
+              bonus:``,
           	},
             {
-          		id:10,
+          		shown:false,
               date:"4/26",
           		theme:"My/Your/Our Voice",
           		inClass:``,
-              afterClass:``
+              afterClass:``,
+              bonus:``,
           	},
             {
-          		id:11,
+          		shown:false,
               date:"5/03",
           		theme:"Public, Private",
           		inClass:``,
-              afterClass:``
+              afterClass:``,
+              bonus:``,
           	},
             {
-          		id:12,
+          		shown:false,
               date:"5/10",
-          		theme:``,
+          		theme:`—`,
           		inClass:``,
-              afterClass:``
+              afterClass:``,
+              bonus:``,
           	},
             {
-          		id:13,
+          		shown:false,
               date:"5/17",
           		theme:"Final Crits",
           		inClass:``,
-              afterClass:``
+              afterClass:``,
+              bonus:``,
           	}
       ]}
 })
