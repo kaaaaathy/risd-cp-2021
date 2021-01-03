@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+body {
+  margin: 0 100px;
+  color: black;
+  font-weight: normal;
+  font-family: 'DM Mono','Inconsolata','Courier',monospace;
+}
+
+.header{
+  margin-top:100px;
+  padding-bottom: 40px;
+}
+
+/* font styles */
+
+h2{
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
+p, li {
+  font-family: 'DM Mono','Inconsolata','Courier',monospace;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+
+/* table styles */
+#schedule {
+
+}
+
+.row {
+  border-bottom: 1px solid black;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.contents {
+  padding: 10px 0px;
+  margin-left:  160px;
+  color: black;
+}
+
+.week{
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  padding: 20px 0px;
+  border-top: 1px solid black;
+
+}
+
+.week:hover{
+  color: blue;
+
+}
+.week-text {
+  font-family: 'DM Mono','Inconsolata','Courier',monospace;
+  font-size: 14px;
+  font-weight: bold;
+  /* padding-right: 30px; */
+  width:160px;
+}
+
+.week-h, .header {
+  font-weight: normal;
+  font-family: Times, 'Times New Roman', serif;
+  font-size:24px;
+}
+
+/* Closable button inside the container tab */
+.closebtn {
+  float: right;
+  color: black;
+  font-size: 24px;
+  margin-top: -70px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.contents{
+  margin-left:160px;
+  padding-bottom: 40px;
+  max-width: 500px;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    margin: 0 40px;
+  }
+
+}
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+</head>
+<body>
+
+<div class="header">
+  &#10000; Schedule
+</div>
+
+<div id="schedule">
+<div class="row">
+
+    <div class="week" onclick="openTab('w1');">
+      <div class ="week-text">
+        2/22
+        &nbsp;&nbsp;
+        Week 1
+      </div>
+
+      <div class ="week-h">
+        OK Computational Poetics
+      </div>
+    </div>
+    <div id="w1" class="contents" style="display:none;">
+      <span onclick="this.parentElement.style.display='none'" class="closebtn">&#8593;</span>
+      <h2>In Class</h2>
+        <p></p>
+        <li>Any medium & means of crowdsourcing — web, cut up, googledocs, google forms, copy paste</li>
+        <li>Read out loud a portion of your text</li>
+        <li>Do not write your own text</li>
+
+      <h2>Assignments</h2>
+        <li></li>
+        <li></li>
+        <li></li>
+
+    </div>
+
+    <div class="week" onclick="openTab('w2');">
+      <div class ="week-text">
+        2/22
+        &nbsp;&nbsp;
+        Week 2
+      </div>
+
+      <div class ="week-h">
+        OK Computational Poetics
+      </div>
+    </div>
+    <div id="w2" class="contents" style="display:none;">
+      <span onclick="this.parentElement.style.display='none'" class="closebtn">&#8593;</span>
+      <h2>In Class</h2>
+        <p></p>
+        <li>Any medium & means of crowdsourcing — web, cut up, googledocs, google forms, copy paste</li>
+        <li>Read out loud a portion of your text</li>
+        <li>Do not write your own text</li>
+
+      <h2>Assignments</h2>
+        <li></li>
+        <li></li>
+        <li></li>
+
+    </div>
+    <div class="week" onclick="openTab('w3');">
+      <div class ="week-text">
+        2/22
+        &nbsp;&nbsp;
+        Week 3
+      </div>
+
+      <div class ="week-h">
+        OK Computational Poetics
+      </div>
+    </div>
+    <div id="w3" class="contents" style="display:none;">
+      <span onclick="this.parentElement.style.display='none'" class="closebtn">&#8593;</span>
+      <h2>In Class</h2>
+        <p></p>
+        <li>Any medium & means of crowdsourcing — web, cut up, googledocs, google forms, copy paste</li>
+        <li>Read out loud a portion of your text</li>
+        <li>Do not write your own text</li>
+
+      <h2>Assignments</h2>
+        <li></li>
+        <li></li>
+        <li></li>
+
+    </div>
+    <div class="week" onclick="openTab('w4');">
+      <div class ="week-text">
+        2/22
+        &nbsp;&nbsp;
+        Week 4
+      </div>
+
+      <div class ="week-h">
+        OK Computational Poetics
+      </div>
+    </div>
+    <div id="w4" class="contents" style="display:none;">
+      <span onclick="this.parentElement.style.display='none'" class="closebtn">&#8593;</span>
+      <h2>In Class</h2>
+        <p></p>
+        <li>Any medium & means of crowdsourcing — web, cut up, googledocs, google forms, copy paste</li>
+        <li>Read out loud a portion of your text</li>
+        <li>Do not write your own text</li>
+
+      <h2>Assignments</h2>
+        <li></li>
+        <li></li>
+        <li></li>
+
+    </div>
+    <div class="week" onclick="openTab('w5');">
+      <div class ="week-text">
+        2/22
+        &nbsp;&nbsp;
+        Week 5
+      </div>
+
+      <div class ="week-h">
+        OK Computational Poetics
+      </div>
+    </div>
+    <div id="w4" class="contents" style="display:none;">
+      <span onclick="this.parentElement.style.display='none'" class="closebtn">&#8593;</span>
+      <h2>In Class</h2>
+        <p></p>
+        <li>Any medium & means of crowdsourcing — web, cut up, googledocs, google forms, copy paste</li>
+        <li>Read out loud a portion of your text</li>
+        <li>Do not write your own text</li>
+
+      <h2>Assignments</h2>
+        <li></li>
+        <li></li>
+        <li></li>
+
+    </div>
+    <div class="week" onclick="openTab('w6');">
+      <div class ="week-text">
+        2/22
+        &nbsp;&nbsp;
+        Week 1
+      </div>
+
+      <div class ="week-h">
+        OK Computational Poetics
+      </div>
+    </div>
+    <div id="w6" class="contents" style="display:none;">
+      <span onclick="this.parentElement.style.display='none'" class="closebtn">&#8593;</span>
+      <h2>In Class</h2>
+        <p></p>
+        <li>Any medium & means of crowdsourcing — web, cut up, googledocs, google forms, copy paste</li>
+        <li>Read out loud a portion of your text</li>
+        <li>Do not write your own text</li>
+
+      <h2>Assignments</h2>
+        <li></li>
+        <li></li>
+        <li></li>
+
+    </div>
+
+</div>
+</div>
+
+<script>
+function openTab(tabName) {
+  var i, x;
+  x = document.getElementsByClassName("contents");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+}
+</script>
+
+</body>
+</html>

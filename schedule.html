@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+body {
+  margin: 0 100px;
+  color: black;
+  font-weight: normal;
+  font-family: 'DM Mono','Inconsolata','Courier',monospace;
+}
+
+.header{
+  margin-top:150px;
+  padding-bottom: 40px;
+}
+
+/* font styles */
+
+h2{
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+p, li {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+
+/* table styles */
+#schedule {
+  border-top: 1px solid black;
+
+}
+
+.row {
+  border-bottom: 1px solid black;
+}
+
+.week{
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  padding: 20px 0px;
+}
+
+.week:hover{
+  color: blue;
+
+}
+.week-text {
+  font-family: 'DM Mono','Inconsolata','Courier',monospace;
+  font-size: 16px;
+  font-weight: bold;
+  /* padding-right: 30px; */
+  width:160px;
+}
+
+.week-h, .header {
+  font-weight: normal;
+  font-family: Times, 'Times New Roman', serif;
+  font-size:24px;
+}
+
+/* Closable button inside the container tab */
+.caret {
+  float: right;
+  color: black;
+  font-size: 24px;
+  margin-top: -70px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.contents{
+  margin-left:160px;
+  padding-bottom: 40px;
+  max-width: 500px;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    margin: 0 40px;
+  }
+
+}
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+</head>
+<body>
+
+<div class="header">
+  &#10000; Schedule
+</div>
+
+<div id="schedule">
+
+<div class = "row" v-for="(week,index) in weeks">
+    <div class = "week" @click="shownWeek = index">
+      <div class ="week-text">{{week.date}} &nbsp;&nbsp; Week {{index+1}}</div>
+      <div class ="week-h">{{week.theme}}</div>
+    </div>
+
+    <!-- <div class="caret">X</div> -->
+
+    <!-- hidden content starts here -->
+    <div class = "contents" v-if="shownWeek==index">
+      <h2>In Class</h2>
+      <p>{{week.inClass}}</p>
+
+      <br>
+
+      <h2>Assignments</h2>
+      <p>{{week.afterClass}}</p>
+    </div>
+</div>
+<!-- end row element -->
+
+</div>
+
+
+<script>
+
+var schedule = new Vue({
+    el: "#schedule",
+    data: {
+      shownWeek: 0,
+      weeks: [
+            {
+          		id:1,
+              date:"2/22",
+          		theme:"OK Computational Poetics",
+          		inClass:
+                `Create shared working definition of computational poetics
+                Introduce projects
+                Class community guidelines
+                Discuss transcription
+                Get set up`
+                ,
+              afterClass:`
+              Getting Set Up
+              Collect a list of corpuses. Add to class corpus list
+              Create a list of tools and computational practices which you feel are within your skill set
+              Sign up for presentations next week
+
+              Project 0
+              Transcription assignment
+              Transcribe anything, 500+ words
+              Share reflections of transcribing on a blog post
+
+              Reading
+              Cyborg Manifesto
+              Decolonization is not a metaphor (p-)
+              `
+          	},
+          	{
+          		id:2,
+              date:"3/01",
+          		theme:"Computers, Language, Society",
+          		inClass:``,
+              afterClass:``
+          	},
+          	{
+          		id:3,
+              date:"3/08",
+          		theme:"Programs + Poems",
+          		inClass:``,
+              afterClass:``
+          	},
+          	{
+          		id:4,
+              date:"3/15",
+          		theme:"Forking Paths, Hypertext Wormholes",
+          		inClass:``,
+              afterClass:``
+          	},
+            {
+          		id:5,
+              date:"3/22",
+          		theme:"Uncreative Writing, Creative Reading",
+          		inClass:``,
+              afterClass:``
+          	},
+            {
+          		id:6,
+              date:"3/29",
+          		theme:"Scale, Material, Data",
+          		inClass:``,
+              afterClass:``
+          	},
+            {
+          		id:7,
+              date:"4/05",
+          		theme:"Writing + Work",
+          		inClass:``,
+              afterClass:``
+          	},
+            {
+          		id:8,
+              date:"4/12",
+          		theme:"Body + Performance",
+          		inClass:``,
+              afterClass:``
+          	},
+            {
+          		id:9,
+              date:"4/19",
+          		theme:"Secrets, Embeddings, Encodings",
+          		inClass:``,
+              afterClass:``
+          	},
+            {
+          		id:10,
+              date:"4/26",
+          		theme:"My/Your/Our Voice",
+          		inClass:``,
+              afterClass:``
+          	},
+            {
+          		id:11,
+              date:"5/03",
+          		theme:"Public, Private",
+          		inClass:``,
+              afterClass:``
+          	},
+            {
+          		id:12,
+              date:"5/10",
+          		theme:``,
+          		inClass:``,
+              afterClass:``
+          	},
+            {
+          		id:13,
+              date:"5/17",
+          		theme:"Final Crits",
+          		inClass:``,
+              afterClass:``
+          	}
+      ]}
+})
+
+
+</script>
+
+</body>
+</html>

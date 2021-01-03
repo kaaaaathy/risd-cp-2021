@@ -3,59 +3,90 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-* {
-  box-sizing: border-box;
-}
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap');
 
 body {
   margin: 0 100px;
-  font-family: Times, 'Times New Roman', serif;
   color: black;
-  text-align: left;
-
+  font-weight: normal;
+  font-family: 'DM Mono','Inconsolata','Courier',monospace;
 }
 
 .header{
-  margin-top:150px;
+  margin-top:100px;
   padding-bottom: 40px;
 }
 
-h2{
-  font-weight: normal;
+/* font styles */
 
+h2{
+  font-weight: bold;
+  font-size: 14px;
 }
+
 
 p, li {
-  font-family: 'Inconsolata','Courier',monospace;
+  font-family: 'DM Mono','Inconsolata','Courier',monospace;
+  font-size: 14px;
   line-height: 24px;
-  /* color: blue; */
 }
 
-/* The grid: Three equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 100%;
-  padding: 30px 10px;
-  font-size: 24px;
-  cursor: pointer;
-  border-top:1px solid black;
+
+/* table styles */
+#schedule {
 
 }
 
-.containerTab {
-  padding: 20px 10px;
-  color: black;
+.row {
+  border-bottom: 1px solid black;
 }
 
-/* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.row {
-  border-bottom: 1px solid black;
+.contents {
+  padding: 10px 0px;
+  margin-left:  160px;
+  color: black;
+}
+
+.project{
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  padding: 20px 0px;
+  border-top: 1px solid black;
+
+}
+
+.project:hover{
+  color: blue;
+
+}
+.project-text {
+  font-family: 'DM Mono','Inconsolata','Courier',monospace;
+  font-size: 14px;
+  font-weight: bold;
+  /* padding-right: 30px; */
+  width:180px;
+}
+
+.due{
+  background-color: yellow;
+  margin-right: 40px;
+  font-weight: bold;
+  font-size: 14px;
+
+}
+
+.project-h, .header {
+  font-weight: normal;
+  font-family: Times, 'Times New Roman', serif;
+  font-size:24px;
 }
 
 /* Closable button inside the container tab */
@@ -68,82 +99,114 @@ p, li {
   cursor: pointer;
 }
 
-.column:hover, .column:active {
-  color:blue;
+.contents{
+  margin-left:160px;
+  padding-bottom: 40px;
+  max-width: 500px;
 }
 
 @media only screen and (max-width: 768px) {
   body {
     margin: 0 40px;
   }
+
 }
 
 </style>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
 </head>
 <body>
 
 <div class="header">
-  <h2>&#10000; Assignments</h2>
+  &#10000; Schedule
 </div>
 
-<!-- Four columns -->
+<div id="schedule">
 <div class="row">
 
-  <div class="column" onclick="openTab('b1');">
-    Project 1
-  </div>
-  <div id="b1" class="containerTab" style="display:none;">
-    <span onclick="this.parentElement.style.display='none'" class="closebtn">&#8593;</span>
-    <p>Crowdsourced text performance
+    <div class="project" onclick="openTab('p1');">
+      <div class="due">Due 3/15</div>
+      <div class ="project-text">
+        Project 1
+      </div>
+
+      <div class ="project-h">
+        Crowdsourced text performance
+      </div>
+    </div>
+    <div id="p1" class="contents" style="display:none;">
+      <div onclick="this.parentElement.style.display='none'" class="closebtn">&#8593;</div>
       <li>Any medium & means of crowdsourcing — web, cut up, googledocs, google forms, copy paste</li>
       <li>Read out loud a portion of your text</li>
       <li>Do not write your own text</li>
-  </p>
-  </div>
 
-  <div class="column" onclick="openTab('b2');">
-    Project 2
-  </div>
-  <div id="b2" class="containerTab" style="display:none;">
-    <span onclick="this.parentElement.style.display='none'" class="closebtn">&#8593;</span>
-    <p>Web based text performance
+    </div>
+
+    <div class="project" onclick="openTab('p2');">
+      <div class="due">Due 3/29</div>
+      <div class ="project-text">
+        Project 2
+      </div>
+
+      <div class ="project-h">
+        Web based text performance
+      </div>
+    </div>
+    <div id="p2" class="contents" style="display:none;">
+      <div onclick="this.parentElement.style.display='none'" class="closebtn">&#8593;</div>
       <li>Use randomness</li>
       <li>Republish an existing corpus or write your own</li>
       <li>consider the gesture of reading: scrolling, clicking, moving your body?</li>
-  </p>
-  </div>
 
-  <div class="column" onclick="openTab('b3');">
-    Project 3
-  </div>
-  <div id="b3" class="containerTab" style="display:none;">
-    <span onclick="this.parentElement.style.display='none'" class="closebtn">&#8593;</span>
-    <p>Sketch Series
+    </div>
+
+    <div class="project" onclick="openTab('p3');">
+      <div class="due">Due 4/26</div>
+      <div class ="project-text">
+        Project 3
+      </div>
+
+      <div class ="project-h">
+        Sketch Series
+      </div>
+    </div>
+    <div id="p3" class="contents" style="display:none;">
+      <div onclick="this.parentElement.style.display='none'" class="closebtn">&#8593;</div>
       <li>Sketch 3.1: Scale</li>
       <li>Sketch 3.2: Body</li>
       <li>Sketch 3.3: Work</li>
       <li>Sketch 3.4: Secrets</li>
-    </p>
-  </div>
 
+    </div>
 
-  <div class="column" onclick="openTab('b4');">
-    Project 4
-  </div>
-  <div id="b4" class="containerTab" style="display:none;">
-    <span onclick="this.parentElement.style.display='none'" class="closebtn">&#8593;</span>
-    <p>Create a new tool or procedure for writing. Consider relationship to the body. Create something meant to be read out loud.  We will have a zoom reading. Consider how language is transmitted through pixel space.</p>
-  </div>
+      <div class="project" onclick="openTab('p4');">
+        <div class="due">Due 4/26</div>
+        <div class ="project-text">
+          Final Project
+        </div>
+
+        <div class ="project-h">
+          writing()
+        </div>
+      </div>
+      <div id="p4" class="contents" style="display:none;">
+        <div onclick="this.parentElement.style.display='none'" class="closebtn">&#8593;</div>
+        <p>Create a new tool or procedure for writing. Consider relationship to the body. Create something meant to be read out loud.  We will have a zoom reading. Consider how language is transmitted through pixel space.</p>
+
+      </div>
+
+    </div>
 
 </div>
-
-
+</div>
 
 
 <script>
 function openTab(tabName) {
   var i, x;
-  x = document.getElementsByClassName("containerTab");
+  x = document.getElementsByClassName("contents");
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
   }

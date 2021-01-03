@@ -3,6 +3,7 @@ Binder
 Thanks to: Clement Valla
 Version: 1.0
 */
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap');
 
 *{
  	margin: 0;
@@ -47,10 +48,10 @@ body {
 	padding: 20px;
   padding-top:25px;
 
-	font-size: 16px;
+	font-size: 14px;
   line-height: 30px;
   font-weight: bold;
-  font-family: 'Inconsolata','PT Sans','Courier',monospace;
+  font-family: 'DM Mono','Inconsolata','PT Sans','Courier',monospace;
 
   letter-spacing: 0.5px;
   box-shadow: 5px 5px 0px black;
@@ -114,7 +115,7 @@ body {
 	color: blue;
 }
 #navigation a:hover{
-	opacity: 0.8;
+	opacity: 0.5;
 }
 #navigation .current_page_item a {
 	color: blue;
@@ -183,8 +184,8 @@ body {
 	#menu {
 		position: fixed;
     width: auto;
-		font-size: 14px;
-		line-height: 30px;
+		font-size: 16px;
+		line-height: 48px;
 		padding: 10px;
 		z-index:10;
 		left: 0px;
@@ -205,14 +206,14 @@ body {
 	}
 	#menu-open{
 		width: 100%;
-		height: 32px;
+		height: 40px;
     padding-left: 10px;
 		cursor: pointer;
 	}
 
 	#clickable {
 	    display:block;
-      line-height: 32px;
+      line-height: 40px;
 
 
 	}
