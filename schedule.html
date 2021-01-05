@@ -47,9 +47,11 @@
 </div>
 
 
-<script>
+<script type = "module">
 
-var schedule = new Vue({
+import projects from "./data.js";
+
+new Vue({
     el: "#schedule",
     data: {
       shownitem: 0,
@@ -72,12 +74,11 @@ var schedule = new Vue({
               <li>Create a list of tools and computational practices which you feel are within your skill set
               <li>Sign up for presentations next item
               <br>
-              <h3>Project 0</h3>
-              Transcription assignment
-
               <h3>Reading</h3>
               <li>Cyborg Manifesto
               <li>Decolonization is not a metaphor (p-)
+              <h3>Project 0</h3> ${projects[0].content}
+              Transcription assignment
               `,
               bonus:``
           	},
