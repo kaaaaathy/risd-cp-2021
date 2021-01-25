@@ -11,8 +11,7 @@
 
 <div class="header">
   &#10000; Schedule
-  <h3>Still a work in progress. Link to <a href="https://docs.google.com/document/d/14twAX6Yev09Ub92XVHaRXwEOfLFVD1WVBWIv8IFky38/edit#heading=h.d13jzau21mnh" target="_blank">schedule notes</a>.
-  </h3>
+  <h3>Most weeks, we will have small group crits on projects-in-progress.<br>We will start each new week with a student share-out and a dicussion of the readings.</h3>
 </div>
 
 
@@ -21,25 +20,32 @@
 <div class = "row" v-for="(week,index) in weeks">
     <div class = "item" @click="week.shown = !week.shown">
       <div class ="item-text">{{week.date}} &nbsp;&nbsp; Week {{index+1}}</div>
-      <div class ="item-heading">{{week.theme}}</div>
+      <div class ="item-heading">{{week.theme}}&nbsp;&nbsp;</div>
+      <div v-html="week.due" class="dueSchedule"></div>
     </div>
 
     <!-- <div class="caret">X</div> -->
 
     <!-- hidden content starts here -->
     <div class = "contents schedule" v-if="week.shown==true">
+      <div v-html="week.questions"></div>
+      <br><br>
       <h3><span class="highlight">
         In Class</span></h3>
         <!-- This is H3 on purpose!! -->
       <div v-html="week.inClass"></div>
 
       <h2><span class="highlight">
-        Assignments</span></h2>
-      <div v-html="week.afterClass"></div>
+        Readings</span></h2>
+      <div v-html="week.reading"></div>
 
       <h2><span class="highlight">
+        Project</span></h2>
+      <div v-html="week.project"></div>
+
+      <!-- <h2><span class="highlight">
         Links</span></h2>
-      <div v-html="week.bonus"></div>
+      <div v-html="week.bonus"></div> -->
     </div>
 </div>
 <!-- end row element -->
@@ -59,124 +65,237 @@ new Vue({
             {
           		shown:false,
               date:"2/22",
-          		theme:"OK Computational Poetics",
-          		inClass:
-                `Create shared working definition of computational poetics
-                <br>
-                <li>Introduce projects
+          		theme:"What is Computational Poetics?",
+          		due:``,
+              questions:`What is computational poetics? What does it mean to apply computational ingredients to language? What are the poetic opportunities of computation? What are the methods + implications?`,
+              inClass:
+                `<h3>Introductions</h3>
                 <li>Class community guidelines
-                <li>Discuss transcription
-                <li>Get set up`
+                <li>Introduce projects, themes, questions
+                <li>Create shared working definition of computational poetics</li>
+                <li>Talk about Re-indexing: Amiri Baraka "Technology & Ethos" on Afro-Futurisms, how typewriters are corny / Non-English-based programming languages / Tuck & Yang: Decolonization is not a metaphor (p1–p13) / Cyberfeminism Index
+
+                <br><br>
+                <h3>Getting Set Up</h3>
+                <li>Collect a list of corpuses. Add to class corpus list
+                <li>Create a list of tools and computational practices which you feel are within your skill set
+                <li>Sign up for presentations
+                <br>`
                 ,
-              afterClass:`
-              <h3>Getting Set Up</h3>
-              <li>Collect a list of corpuses. Add to class corpus list
-              <li>Create a list of tools and computational practices which you feel are within your skill set
-              <li>Sign up for presentations next item
-              <br>
-              <h3>Reading</h3>
-              <li>Cyborg Manifesto
-              <li>Decolonization is not a metaphor (p-)
-              <h3>Project 0</h3> ${projects[0].content}
-              Transcription assignment
+              reading:`
+              <li>Cyberfeminist Manifesto
+              <li>Black Gooey Universe
               `,
-              bonus:``
+              project:`
+              <li>${projects[0].project}: ${projects[0].name} </li>
+              `
           	},
           	{
           		shown:false,
               date:"3/01",
-          		theme:"Computers, Language, Society",
-          		inClass:``,
-              afterClass:``,
-              bonus:``,
+          		theme:"Re-Indexing Computer History / Roots",
+          		due:`Project 0 Due`,
+              questions:`How does the history of computational tools influence our present practice? Where do the roots show up? Who are we in dialogue with when we do this work, and where might our tools betray our creators?`,
+              inClass:`
+              <li>Discuss readings: What roots do we want to take with us? To betray or sever?
+              <li>Review links from Project 0: Re-Indexing.
+              <li>If not covered, look at: Cyberfeminism Manifesto / Skawennati / American Artist / Weaving + Jacquard / Human Computers / Software woven into wire: Core rope and the Apollo Guidance Computer video.
+              <li>Discuss next 3 weeks: Methodologies
+              <li><span class="tech">Optional</span> We will do an introduction to RiTA here using Dan Shiffman, then gauge class interest</span>
+              `,
+              reading:`
+              <li>Padgett, Ron Creative Reading: What It Is, How To Do It`,
+              project:`
+              <li>${projects[1].project}: ${projects[1].name} </li>
+              `,
           	},
           	{
           		shown:false,
               date:"3/08",
-          		theme:"Programs + Poems",
-          		inClass:``,
-              afterClass:``,
-              bonus:``,
+          		theme:"Functions, Scores, Rituals",
+          		due:`Project 1 Due`,
+              questions:`In what way can we use “programming” as a metaphor to understand the mechanics of our own behaviors individually and at scale?
+              <br><br>What scores do we read, what scores do we write? How does context affect the nature of score?
+              `,
+              inClass:`
+              <li>Reflect on transcription project
+              <li>Student share + reading discussion
+              <li>Write a score which describes a ritual
+              <li>Hand as planchette exercise. (after Kameelah Rasheed) Afterwards, write a new score for reading
+              <li><span class="tech">Required</span> Start a website which takes in json + randomization</span>`,
+              reading:`Travesty Generator by Lillian-Yvonne Bertram (more: Travesty Generator)`,
+              project:`${projects[2].project}: ${projects[2].name}`,
           	},
           	{
           		shown:false,
               date:"3/15",
-          		theme:"Forking Paths, Hypertext Wormholes",
-          		inClass:``,
-              afterClass:``,
-              bonus:``,
+          		theme:"Randomness, Chance, Oracles",
+          		due:``,
+              questions:`When inviting chance as an ingredient or collaborator, what fractalline futures are possible? How does statistical randomness become a metaphor?`,
+              inClass:`
+              <li>Student share + reading discussion
+              <li>You can adapt the score you wrote in class 3. Rewrite a list of new parameters: nouns, verbs, etc.
+              <li>Try doing this with news headlines. Replace key nouns and verbs.
+              <li>Kameelah Rasheed: Ouija Boards + Lucille Cliffton + The Spiritual, hand-as-planchett
+              <li>Kimiko Hahn talks Zuihitsu, or “running brush,” and cultivating randomness
+              <li><span class="tech">Required</span> Finish a website which takes in json + randomization</span>`,
+              reading:`<li>Eunoia, Excerpts
+              <li>In the beginning was the word, and the word was embodied, Aeon`,
+              project:`Continue ${projects[2].project}: ${projects[2].name}`
           	},
             {
           		shown:false,
               date:"3/22",
-          		theme:"Uncreative Writing, Creative Reading",
-          		inClass:``,
-              afterClass:``,
-              bonus:``,
+          		theme:"Order, Sort, Repeat",
+          		due:``,
+              questions:`How does the use of looping, sorting, and constraining language produce poetics? Some define poetry by its relationship to sound — ways linguistic similarities are highlighted and heightened.`,
+              inClass:`
+              <li>Small group crit
+              <li>Student share + reading discussion
+              <li>In class: Draw from a corpus. See what happens if you delete certain words and repeat others
+Come up with a rule: Don’t read any word which has the letter e. Don’t read any word longer than 4 letters. If you And so on.
+We will read these aloud in class.
+<li>Look at: Kiki Bouba, Allison Parrish / Christan Bok`,
+              reading:`<li>Garden of Forking Paths (Borges)`,
+              project:`Finish ${projects[2].project}: ${projects[2].name}`,
           	},
             {
           		shown:false,
               date:"3/29",
-          		theme:"Scale, Material, Data",
-          		inClass:``,
-              afterClass:``,
-              bonus:``,
+          		theme:"Collective Hypertext",
+          		due:`Project 2 Due`,
+              questions:`What does non-linear readership offer? What influence does a reader have over their own path? What about a text which is made of many texts, and many places? How do you read the internet?
+              <br><br>
+              Where in your practice do you produce language with others? How is authorship distributed?
+`,
+              inClass:`<li>Talk about Project 1
+              <li>Student share + reading discussion
+              <li>In class: Spend all of class today in a google doc. We will read the final output. Each person should add at least one hyperlink.
+              <li>We will take turns reading the google doc.
+              <li><span class="tech">Optional</span> We will play with Rita Markov chains, for whoever is interested
+`,
+              reading:`
+              <li>Common Cyborg | Jillian Weise
+              <li>Why Siri Sounds Like A Girl, But Says She Is Beyond Gender`,
+              project:`Start ${projects[3].project}: ${projects[3].name}`,
           	},
             {
           		shown:false,
               date:"4/05",
-          		theme:"Writing + Work",
-          		inClass:``,
-              afterClass:``,
-              bonus:``,
+          		theme:"Interface + Embodiment",
+          		due:``,
+              questions:`If I am an AI voice-controlled interface, how does my appearance and identity render the language I offer?`,
+              inClass:`<li>Small group crits
+              <li>Student share + reading discussion
+              <li>Look at: Alt-Text as Poetry Workbook / Skawennati + Second Life / Excerpt from Disability Visibility / Ian Hatcher / Cunnilingus in North Korea
+              <li>In class: Try feeding parts of your project 1 or collective google doc through different voice interfaces. Try presenting the same text 3 different ways.</li>
+              <li>In class: In class: Inspired by Jackie Liu: Design your own cursor for reading. How does it read Google?
+              `,
+              reading:`
+              <li>Politics of Transcription
+              <li>Zong! (Text excerpts)
+              <li>The writing of Zong!`,
+              project:`Continue ${projects[3].project}: ${projects[3].name}`,
           	},
             {
           		shown:false,
               date:"4/12",
-          		theme:"Body + Performance",
-          		inClass:``,
-              afterClass:``,
-              bonus:``,
+          		theme:"Body + Corpus",
+          		due:``,
+              questions:`What is our relationship to the original corpus? Parrish describes corpus as necromancy — how do acts of translation, transformation, recontextualization interact with corpus? Is it reverent, caring, exhuming, violent?`,
+              inClass:`<li>Small group crit
+              <li>Student share + reading discussion
+              <li>In class: Take virtual document, Terms of Use. Use a find and replace tool. How long until it no longer has the linguistic quality of the original document? Share it with the class.
+              <li>In class: Write a list of verbs. Take a printed document. Perform actions to it: tearing, cutting, spilling, circling. Do a reading of the final output.
+            `,
+              reading:``,
+              project:`Finish ${projects[3].project}: ${projects[3].name}`,
           	},
             {
           		shown:false,
               date:"4/19",
-          		theme:"Secrets, Embeddings, Encodings",
-          		inClass:``,
-              afterClass:``,
-              bonus:``,
+          		theme:"Corpus Consciousness, Shell Ghosts",
+          		due:`Project 3 Due`,
+              questions:`Ghost in the shell: Who takes responsibility when a bot writes problematics? Who gets to make machines that write for another, especially when they no longer exist? What does their presence teach us, how might they haunt us?
+`,
+              inClass:`
+              <li>Talk about Project 2
+              <li>Student share + reading discussion
+                <li>Look at: Twitter Bots / Expanding Brain Bot / A House of Dust (@ahouseofdust) / Big Ben etc / Bot Summit, Darius Kazemi
+              <li><span class="tech">Optional</span> Play with Cheap Bots, Done Quick!`,
+              reading:`
+              <li>
+              Enron Emails – article
+              <li>
+              Excavating AI
+              <li>
+              How We Became Machine Readable - Mimi Onuoha
+`,
+              project:`Start ${projects[4].project}: ${projects[4].name}`,
           	},
             {
           		shown:false,
               date:"4/26",
-          		theme:"My/Your/Our Voice",
-          		inClass:``,
-              afterClass:``,
-              bonus:``,
+          		theme:"Data + Classifier",
+          		due:``,
+              questions:`What happens to information within taxonomies and names? What about information without? What are missing data sets and corpuses we might start to build? What do we gain and lose with classification?`,
+              inClass:`
+              <li>Small Group Crits
+              <li>Student share + reading discussion
+              <li>Allied Media: A People's Guide to AI
+              <li>In class: Brainstorm missing data sets. What would it mean for us to have this data set?
+              <li>In class: People’s Guide to AI activity
+              <li><span class="tech">Optional</span> What is Machine Learning? — R Fiebrink (Lecture 2-3)</span>
+
+
+`,
+              reading:`<li>Against Black Inclusion in Facial Recognition
+              <li>Joy Buolomwini AI Ain’t I a Woman
+              <li>Joy Buolomwini Senate Hearing (starts at 15:57)`,
+              project:``,
           	},
             {
           		shown:false,
               date:"5/03",
-          		theme:"Public, Private",
-          		inClass:``,
-              afterClass:``,
-              bonus:``,
+          		theme:"Read Me, Read Me Not",
+          		due:``,
+              questions:`Within forces of classification, where might we situate ourselves? Where might we want to be read, versus where might we want our true meaning to be obfuscated or opaque? `,
+              inClass:`
+              <li>Small Group Crits
+              <li>Student share + reading discussion
+              <li>Read Instagrams / Facebooks/ Youtube etc terms of use. What is some content you might want to put online still which breaks those? Play with steganography to conceal that information.
+              <li>Look at: Drag vs. AI – AJL / Kpop Stans and Police Radar / Wartime Spies Who Used Knitting as an Espionage Tool / Nüshu: from tears to sunshine / Cao Ni Ma etc
+`,
+              reading:`<li>Ursula LeGuin: Bryn Mawr Speech (excerpts)
+<li>Catherine D'Ignazio, Lauren Klein: Data Feminism, Show Your Work`,
+              project:``,
           	},
             {
           		shown:false,
               date:"5/10",
-          		theme:`—`,
-          		inClass:``,
-              afterClass:``,
-              bonus:``,
+          		theme:`Show Your Work`,
+          		due:`Project 4 Due`,
+              questions:`What is the marketplace for those who classify as labor? Whose work do we appropriate? Who is classified as artist, writer, laborer, machine?`,
+              inClass:`
+              <li>Group Crit
+              <li>Student share + reading discussion
+              <li> Writing as Work/ Work as Appropriation / Digital Labor / Annotation
+              <li>Reading as Work / The trauma floor: The secret lives of Facebook moderators in America / Everest Pipkin - Lacework
+              <li>Representations of Work / Epic Hand Washing in the Time of Lost Narratives / Process Genre, Yellow Crayons + Mr Rogers / Iron Moon
+              <li>Anne Boyer: Not Writing (also, “What is Not Writing?”)
+`,
+              reading:`—`,
+              project:`Decide what project you would like to present (projects 2, 3, or 4). Make any revisions or tweaks to it.`,
           	},
             {
           		shown:false,
               date:"5/17",
-          		theme:"Final Crits",
-          		inClass:``,
-              afterClass:``,
-              bonus:``,
+          		theme:"Final Presentations",
+          		due:``,
+              questions:`This week we will present project 2, project 3, or project 4 to guest critics for a public reading. You are welcome to revise your projects and share whichever ones you want.`,
+              inClass:`Public reading~`,
+              reading:`—`,
+              project:`—`,
           	}
       ]}
 })

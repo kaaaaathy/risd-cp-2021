@@ -34,6 +34,19 @@ p, li {
 
 }
 
+.tech {
+  background-color: black;
+  color:white;
+  padding: 0px 4px;
+}
+
+.dueSchedule {
+  font-family: 'DM Mono','Inconsolata','Courier',monospace;
+  font-size: 14px;
+  background-color: yellow;
+  margin-right:40px;
+}
+
 .highlight{
   background-color: pink;
 }
