@@ -8,7 +8,10 @@ export default
   As a class, we are going to create an slack index of rewritten computer history materials.
   <br><br>
   For this 1-week assignment, find 1-3 articles/links/zines/media that you would like in a syllabus about computer history. How would we incubate a less white supremacist, patriarchal computer history?
-  <br><br>Post these to the slack channel #re-index after you find them. If someone posts yours, feel free to repost to emphasize; try to find another. We will discuss/respond toe each link in class 2.
+  <br><br>
+  <img src="/imgs/abtec.jpg" width="300"><br><span class="caption">ABTEC Island, Skawennati</span>
+  <br><br>
+  Post these to the slack channel #re-index after you find them. If someone posts yours, feel free to repost to emphasize; try to find another. We will discuss/respond toe each link in class 2.
   `
   },
 
@@ -27,6 +30,8 @@ export default
     <li>How spatial is it? (e.g. a set of unrelated receipts on the table, a set of street names)
     <br>
     <br>
+    <img src="/imgs/Bruno-Leyval.jpg" width="300"><br><span class="caption">Automatic Writing, Bruno Leyval</span>
+    <br><br>
     In a few sentences in the Slack, articulate how transcription feels as a method of transformation. Note the bodily and mental experience of translation. Note the decisions you make when you are translating it. In which ways does it feel neutral, or opinionated?
 `
   },
@@ -45,6 +50,8 @@ export default
     <li> You can repurpose an existing text or you can write your own.
     <br>
     <br>
+    <img src="/imgs/ants.jpg" width="300"><br><span class="caption">Benjamin Patterson, Ants</span>
+    <br><br>
     <b>To consider:</b> How do computational ingredients affect the nature of the text? How does the literal and metaphorical concepts randomness, repetition, score transform the text’s meaning?
     `
 	},
@@ -62,6 +69,8 @@ export default
     <li>Can use any medium of language expression: text, audio based, etc. Will you perform it? Will you use a voice interface other than yourself? Will it be silent?
     <br>
     <br>
+    <img src="/imgs/siri.jpg" width="300"><br><span class="caption">Siri</span>
+    <br><br>
     <b>To consider:</b> How does the embodiment of the text shift the relationship between the original text(s)? Will you reveal difference between all/both voices, or channel through a disambiguating singular body?
     `
 
@@ -87,6 +96,8 @@ export default
     <li>Is the result different each time on the same text(s), or the same?
     <li>How does it behave on different texts?
     <li>Can / should this be performed through other means?
+    <br><br>
+    <img src="/imgs/ouroboros.jpg" width="300"><br><span class="caption">Image of an ouroboros, or serpent eating its tail. (Wikipedia)</span>
     <br><br>
     This work can build off of one of your previous projects. Themes from class you can optionally play with if it inspires: Missing data sets. obfuscation of secrets, labor / work
 

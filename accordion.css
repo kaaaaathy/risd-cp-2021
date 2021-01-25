@@ -33,6 +33,7 @@ h2 {
 p, li {
 
 }
+/* FONT styles */
 
 .tech {
   background-color: black;
@@ -52,6 +53,10 @@ p, li {
   padding: 0px 4px;
 }
 
+.caption {
+  font-size: 11px;
+  font-style:italic;
+}
 /* table styles */
 #schedule {
   border-top: 1px solid black;
