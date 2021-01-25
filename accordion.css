@@ -49,6 +49,7 @@ p, li {
 
 .highlight{
   background-color: pink;
+  padding: 0px 4px;
 }
 
 /* table styles */
@@ -143,6 +144,8 @@ p, li {
 
   .item-heading{
     width: 100%;
+    line-height: 36px;
+
   }
   .contents{
     margin-left: 0px;
