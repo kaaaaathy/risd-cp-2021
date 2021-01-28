@@ -37,7 +37,7 @@ export default
   },
 {
 		shown:false,
-    date:"Due 3/15",
+    date:"Due 3/29",
 		project:"Project 2",
     name:"Programmatic / Poetic",
 		content:`
@@ -57,7 +57,7 @@ export default
 	},
 	{
 		shown:false,
-    date:"Due 3/29",
+    date:"Due 4/19",
 		project:"Project 3",
     name:"Embodied Voice(s)",
 		content:`
@@ -78,7 +78,7 @@ export default
 
 	{
 		shown:false,
-    date:"Due 5/17",
+    date:"Due 5/10",
 		project:"Project 4",
     name:"New Methods",
 		content:`
