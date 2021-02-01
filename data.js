@@ -11,7 +11,7 @@ export default
   <br><br>
   <img src="https://kaaathy.com/risd-cp-2021/imgs/abtec.jpg" class="imageCaption"><br><span class="imageCaption">ABTEC Island, Skawennati</span>
   <br><br>
-  Post these to the slack channel #re-index after you find them. If someone posts yours, feel free to repost to emphasize; try to find another. We will discuss/respond toe each link in class 2.
+  Post these to the slack channel #re-index after you find them. If someone posts yours, feel free to repost to emphasize; try to find another. We will discuss/respond to each link in class 2.
   `
   },
 
@@ -41,13 +41,13 @@ export default
 		project:"Project 2",
     name:"Programmatic / Poetic",
 		content:`
-    Create a project with some web-based component which combines computational ingredients and text. This project:
+    Create a text-based project with a web-based component which applies computational ingredients (i.e. chance, score, ordering) to text and optionally, imagery. This project:
     <br>
     <br>
     <li> Must be able to be read in class by another person, without instruction. (If it’s important for it to be read by you, let me know)
-    <li> Must use randomness in some way
-    <li> Must demonstrate a basic knowledge of HTML/CSS styling
-    <li> You can repurpose an existing text or you can write your own.
+    <li> Must, at minimum, use randomness in some way
+    <li> Must demonstrate a basic knowledge of HTML/CSS and calling an array by index
+    <li> You can use an existing text (i.e. a poem, piece of news, etc) or you can write your own.
     <br>
     <br>
     <img src="https://kaaathy.com/risd-cp-2021/imgs/ants.jpg" class="imageCaption"><br><span class="imageCaption">Benjamin Patterson, Ants, 1960-1962</span>
