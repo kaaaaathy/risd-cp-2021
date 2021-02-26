@@ -11,7 +11,7 @@ export default
   <br><br>
   <img src="https://kaaathy.com/risd-cp-2021/imgs/abtec.jpg" class="imageCaption"><br><span class="imageCaption">ABTEC Island, Skawennati</span>
   <br><br>
-  Post these to the slack channel #re-index after you find them. If someone posts yours, feel free to repost to emphasize; try to find another. We will discuss/respond to each link in class 2.
+  Post these to the working google doc: <a href="https://tinyurl.com/comppoetics-reindex" target="_blank">https://tinyurl.com/comppoetics-reindex</a>. If someone posts yours, feel free to repost to emphasize; try to find another. We will discuss/respond to each link in class 2.
   `
   },
 
