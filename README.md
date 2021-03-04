@@ -2,7 +2,7 @@
 class website: https://kaaathy.com/risd-cp-2021
 
 # example websites (week 3–)
-* more detailed lessons here: [lesson plans](https://docs.google.com/document/d/1606Vq_ELeQ6d4PIADPZ3jifnsoMl8jUu_Srvody0A5A/edit#heading=h.6nrk4jj4sswg)
+more detailed lessons here: [lesson plans](https://docs.google.com/document/d/1606Vq_ELeQ6d4PIADPZ3jifnsoMl8jUu_Srvody0A5A/edit#heading=h.6nrk4jj4sswg)
 (working doc, subject to change/be broken)
 
 **lesson 1: working with arrays**
@@ -10,10 +10,11 @@ class website: https://kaaathy.com/risd-cp-2021
 * watch coding train on arrays: [youtube](https://www.youtube.com/watch?v=VIQoUghHSxU)
 * example: [add arrays to DOM elements](https://kaaathy.com/risd-cp-2021/class-materials/2-dom/arrays_in_DOM.html)
 
-**lesson 2: erasure poems with js + interactivity**
+**lesson 2: interactive poems with js**
 
-* example: [adding interactivity](https://kaaathy.com/risd-cp-2021/class-materials/3-erasure/romance_hover.html)
-* example: [adding randomness](https://kaaathy.com/risd-cp-2021/class-materials/2-dom/example.html)
+* example: [reverse erasure poem](https://kaaathy.com/risd-cp-2021/class-materials/3-erasure/romance_hover.html)
+* example: [roll the dice](https://kaaathy.com/risd-cp-2021/class-materials/2-dom/example.html)
+* example (tbd): playing with animation + delays
 
 **lesson 3: random things you might want to do**
 
