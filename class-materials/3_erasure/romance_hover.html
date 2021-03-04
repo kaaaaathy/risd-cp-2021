@@ -1,0 +1,159 @@
+<html>
+<head>
+<style type="text/css">
+#content {
+  font-family: Arial;
+  padding: 100px 0;
+}
+
+body {
+  text-align: center;
+
+}
+
+#content {
+  width:100%;
+  /* background-color: pink; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+}
+
+div .wordItem {
+  border:1px solid black;
+  color:white;
+  padding:20px;
+  width: auto;
+  margin: 20px;
+}
+
+div .wordItem:hover{
+  color:black;
+}
+
+
+</style>
+</head>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/rita"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+  <!-- <div id="div"></div> -->
+  <div id="content"></div>
+  <button onclick="update()">another one</button>
+
+  <script>
+
+  let data;
+  let words;
+
+
+      setup();
+      build();
+
+      // read();
+
+      // function read()
+      // {
+      //      var textFile = new XMLHttpRequest();
+      //      textFile.open("GET", "romance.txt", true);
+      //      textFile.onreadystatechange = function()
+      //      {
+      //           if (textFile.readyState === 4)
+      //           {
+      //                // Makes sure the document is ready to parse.
+      //                if (textFile.status === 200)
+      //                {
+      //                     // Makes sure it's found the file.
+      //                     // document.getElementById("div").innerHTML = textFile.responseText;
+      //                     data = textFile.responseText;
+      //                     console.log(textFile.responseText);
+      //
+      //                }
+      //           }
+      //      }
+           // textFile.send(null);
+      // }
+
+  let test;
+  function preload(){
+    test = loadStrings("romance.txt");
+
+  }
+  // LOAD DATA + BREAK INTO WORDS
+  function setup(){
+      data = "like some fourteen-year-old girl waiting for her crush to glance back i keep waiting for capitalism to end but it won’t end my adult life lover states";
+      words = data.split(' ');
+      // console.log(RiTa.analyze(data));
+  }
+
+  // MAKE IT APPEAR IN DOM
+  function build(){
+    for (i=0; i<words.length;i++){
+        console.log(words[i]);
+        let newdiv = document.createElement("div");
+        newdiv.id = 'word-' + i;
+        newdiv.classList.add("wordItem");
+        newdiv.innerHTML = words[i];
+        document.getElementById("content").appendChild(newdiv);
+    }
+    console.log("BUILD COMPLETE");
+
+  }
+
+  // function onclick(object){
+  //     object.innerHTML=RiTa.randomWord({targetPos:"nn"});
+  // }
+
+//GIVE ME A RHYMING WORD ON CLICK
+document.getElementById("content").addEventListener("click",function(e) {
+	// e.target was the clicked element
+
+  if (e.target && e.target.matches("div.wordItem")) {
+    // console.log(randomRhyme(e.target.innerHTML));
+    // e.target.innerHTML = randomRhyme(e.target.innerHTML);
+        // for (i=0; i<words.length;i++){
+        //
+        //   }
+    if (e.target.style == "color:black"){
+      e.target.style = "color:white";
+      console.log()
+  }
+  else {
+    e.target.style = "color:black";
+  }
+//Get this to work!
+}
+});
+
+//work on toggle Later
+
+// function toggleWord(e){
+//
+//   element.classList.add("legible");
+//   element.classList.remove("legible");
+//
+// }
+
+function randomRhyme(word){
+  let rhymes;
+
+  // if (RiTa.isNoun(word)==true){
+    rhymes = RiTa.rhymes(word);
+    if (rhymes.length > 0){
+        let randomNum = Math.floor(Math.random() * rhymes.length);
+        console.log(rhymes);
+        return rhymes[randomNum];
+    }
+    else{
+        return word;
+    }
+  // }
+  // else{
+  //   return word;
+  //
+  // }
+}
+
+  </script>
+<html>

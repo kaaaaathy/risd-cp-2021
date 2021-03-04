@@ -22,7 +22,6 @@ body {
 
   <script>
 
-
       // console.log(RiTa.randomWord());
       // console.log(RiTa.randomWord({targetPos: "nns"}));
       // console.log(RiTa.randomWord({numSyllables: 3, maxLength: 10}));
@@ -35,10 +34,11 @@ body {
         let parts = RiTa.pos(data);
         console.log(parts);
         let words = RiTa.tokenize(data);
+        
 
 
         console.log(RiTa.analyze(data));
-        
+
 // MAKE IT RANDOM
       // for (i=0; i<words.length;i++){
       //   if (RiTa.isNoun(words[i])==true && words[i] != "lit"){
