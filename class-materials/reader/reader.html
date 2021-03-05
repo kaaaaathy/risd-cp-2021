@@ -21,21 +21,46 @@ h1 {
   padding-bottom: 40px;
 }
 
-.line {
+#template {
+  border-bottom:1px solid navy;
+
+}
+.row {
   display: flex;
   flex-wrap:wrap;
   border-top:1px solid navy;
   padding: 20px 0px;
+  height:20px;
+  line-height: 1.5rem;
+  overflow: hidden;
+  transition: all 0.1s ease;
 
 }
+
 
 .topline {
   padding-right: 40px;
+  height: 40px;
+
 }
-.contents {
-  padding-bottom: 20px;
-  animation-duration: 3s;
+
+.row:hover {
+  overflow: visible;
+  height: auto;
+  /* color:thistle;
+  background-color: navy; */
 }
+
+/* .row:hover .button{
+  color:thistle;
+  background-color: navy;
+  border: 1px solid thistle;
+
+} */
+
+/* .contents {
+  padding: 20px 0px;
+} */
 
 
 .button {
@@ -43,13 +68,12 @@ h1 {
   border: 1px solid navy;
   border-radius: 20px;
   padding:4px 6px;
+  color:navy;
 
 }
 
 a {
   text-decoration: none;
-  color: navy;
-
 }
 
 </style>
@@ -66,38 +90,23 @@ a {
 <div id="template">
 <!-- Figure this out tomorrow -->
 
-
 <div class = "row" v-for="(item,index) in allItems">
-    <div class = "line" @click="item.shown = !item.shown">
     <!-- Activate this if you want a toggle effect -->
-    <!-- <div class = "line"> -->
-      <div class ="topline">{{item.artist}}</div>
-      <div class ="topline">{{item.project}}</div>
-      <a class = "button" v-bind:href="item.url" target="_blank">Read</a>
-    </div>
-
+      <div class ="topline">{{item.artist}}&nbsp;&nbsp;&nbsp;{{item.project}}&nbsp;&nbsp;&nbsp;
+        <a class = "button" v-bind:href="item.url" target="_blank">Read</a>
+        </div>
+      <br>
+      <div v-html="item.info"></div>
     <!-- <div class="caret">X</div> -->
 
     <!-- hidden content starts here -->
-    <div class = "contents template" v-if="item.shown==true">
-      <div v-html="item.info"></div>
-      <br>
-      <div v-html="item.stuff"></div>
-      <br>
 
-
-    </div>
 </div>
 
 <!-- end row element -->
 </div>
 <script type = "module">
 
-$( ".line" ).click(function() {
-  $( ".contents" ).slideDown( "slow", function() {
-    // Animation complete.
-  });
-});
 
 new Vue({
     el: "#template",
@@ -116,7 +125,7 @@ new Vue({
                     on what will end:
                     Libraries  Birds  Retirement  Recess Sprinting during recess  Hispid Hares Starfish shaped like stars  Inconvenience `,
               stuff:`Stuff`,
-              url:"http://kaaathy.com"
+              url:""
           	},
             {
           		shown:false,
@@ -130,7 +139,7 @@ new Vue({
                     on what will end:
                     Libraries  Birds  Retirement  Recess Sprinting during recess  Hispid Hares Starfish shaped like stars  Inconvenience `,
               stuff:`Stuff`,
-              url:"http://kaaathy.com"
+              url:""
           	},
             {
           		shown:false,
@@ -144,7 +153,7 @@ new Vue({
                     on what will end:
                     Libraries  Birds  Retirement  Recess Sprinting during recess  Hispid Hares Starfish shaped like stars  Inconvenience `,
               stuff:`Stuff`,
-              url:"http://kaaathy.com"
+              url:""
           	},
             {
           		shown:false,
@@ -158,7 +167,7 @@ new Vue({
                     on what will end:
                     Libraries  Birds  Retirement  Recess Sprinting during recess  Hispid Hares Starfish shaped like stars  Inconvenience `,
               stuff:`Stuff`,
-              url:"http://kaaathy.com"
+              url:""
           	},
 
 
