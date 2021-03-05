@@ -24,7 +24,7 @@ body {
   color:white;
   padding:20px;
   width: auto;
-  margin: 20px;
+  margin: 10px;
 }
 
 div .wordItem:hover{
@@ -43,14 +43,12 @@ div .wordItem:hover{
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
   <!-- <div id="div"></div> -->
   <div id="content"></div>
-  <button onclick="update()">another one</button>
-
   <script>
 
   let importedTxt;
   let words;
 
-  fetch('romance.txt')
+  fetch('lumber.txt')
       .then(response => response.text())
       .then(data => {
           importedTxt = data;
