@@ -37,9 +37,6 @@ use github pages to host for free
 
 **lesson 5: playing with word2vec on ML5 OR rita markov**
 
-* tbd, might not have this lesson
+* tbd
 
-**lesson 6: using github pages to host your own site**
-
-* add this to the class reader
 
