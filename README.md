@@ -21,7 +21,7 @@ we will play with animation, onclick, event handlers, delays
 * example: [wiggly poem](https://kaaathy.com/risd-cp-2021/class-materials/3-interaction/wiggle.html)
 * example: [jquery draggable + adding images](https://kaaathy.com/risd-cp-2021/class-materials/3-interaction/draggable.html)
 
-**lesson 3: uploading to github pages + random stuff**  
+**lesson 3: uploading to github pages**  
 download glitch.me files locally, create github repo  
 use github pages to host for free  
 
