@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="accordion.css" media="screen"/>
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+</head>
+<body>
+
+<div class="header">
+  &#10000; Assignments
+</div>
+
+<div id="projects">
+
+<div class = "row" v-for="(project,index) in projects">
+    <div class = "item" @click="project.shown = !project.shown">
+      <div class ="due">{{project.date}}</div>
+      <div class ="item-project">{{project.project}}</div>
+      <div class ="item-heading">{{project.name}}</div>
+    </div>
+
+    <!-- <div class="caret">X</div> -->
+
+    <!-- hidden content starts here -->
+    <div class = "contents assignments" v-if="project.shown==true">
+      <div v-html="project.content"></div>
+
+    </div>
+</div>
+<!-- end row element -->
+
+</div>
+
+
+<script type = "module">
+
+import projects from "./data.js";
+
+
+new Vue({
+    el: "#projects",
+    data: {
+      projects
+    }
+  })
+
+
+</script>
+
+</body>
+</html>
