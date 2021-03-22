@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+<style>
+body {
+  font-family:Arial;
+  background-color: thistle;
+  color: navy;
+  margin: 20px;
+}
+
+h1 {
+  font-weight: normal;
+}
+
+.header{
+  padding-bottom: 40px;
+}
+
+#template {
+  border-bottom:1px solid navy;
+
+}
+.row {
+  display: flex;
+  flex-wrap:wrap;
+  border-top:1px solid navy;
+  padding: 20px 0px;
+  height:20px;
+  line-height: 1.5rem;
+  overflow: hidden;
+  transition: all 0.1s ease;
+
+}
+
+
+.topline {
+  padding-right: 40px;
+  height: 40px;
+
+}
+
+.row:hover {
+  overflow: visible;
+  height: auto;
+  /* color:thistle;
+  background-color: navy; */
+}
+
+/* .row:hover .button{
+  color:thistle;
+  background-color: navy;
+  border: 1px solid thistle;
+
+} */
+
+/* .contents {
+  padding: 20px 0px;
+} */
+
+
+.button {
+  font-size: 12px;
+  border: 1px solid navy;
+  border-radius: 20px;
+  padding:4px 6px;
+  color:navy;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="header">
+  <h1>computational poetics reader</h1>
+  Subtext
+</div>
+
+
+<div id="template">
+<!-- Figure this out tomorrow -->
+
+<div class = "row" v-for="(item,index) in allItems">
+    <!-- Activate this if you want a toggle effect -->
+      <div class ="topline">{{item.artist}}&nbsp;&nbsp;&nbsp;{{item.project}}&nbsp;&nbsp;&nbsp;
+        <a class = "button" v-bind:href="item.url" target="_blank">Read</a>
+        </div>
+      <br>
+      <div v-html="item.info"></div>
+    <!-- <div class="caret">X</div> -->
+
+    <!-- hidden content starts here -->
+
+</div>
+
+<!-- end row element -->
+</div>
+<script type = "module">
+
+
+new Vue({
+    el: "#template",
+    data: {
+      shownitem: 0,
+      allItems: [
+            {
+          		shown:false,
+              line:``,
+              artist:`Your name`,
+              project:`Project name`,
+              info:`like some 14 year old girl waiting for her crush to glance back i 
+                    keep waiting for capitalism to end
+                    but it won’t end
+                    my adult life lover states
+                    on what will end:
+                    Libraries  Birds  Retirement  Recess Sprinting during recess  Hispid Hares Starfish shaped like stars  Inconvenience `,
+              stuff:`Stuff`,
+              url:""
+          	},
+            {
+          		shown:false,
+              line:``,
+              artist:`Your name`,
+              project:`Project name`,
+              info:`like some 14 year old girl waiting for her crush to glance back i 
+                    keep waiting for capitalism to end
+                    but it won’t end
+                    my adult life lover states
+                    on what will end:
+                    Libraries  Birds  Retirement  Recess Sprinting during recess  Hispid Hares Starfish shaped like stars  Inconvenience `,
+              stuff:`Stuff`,
+              url:""
+          	},
+            {
+          		shown:false,
+              line:``,
+              artist:`Your name`,
+              project:`Project name`,
+              info:`like some 14 year old girl waiting for her crush to glance back i 
+                    keep waiting for capitalism to end
+                    but it won’t end
+                    my adult life lover states
+                    on what will end:
+                    Libraries  Birds  Retirement  Recess Sprinting during recess  Hispid Hares Starfish shaped like stars  Inconvenience `,
+              stuff:`Stuff`,
+              url:""
+          	},
+            {
+          		shown:false,
+              line:``,
+              artist:`Your name`,
+              project:`Project name`,
+              info:`like some 14 year old girl waiting for her crush to glance back i 
+                    keep waiting for capitalism to end
+                    but it won’t end
+                    my adult life lover states
+                    on what will end:
+                    Libraries  Birds  Retirement  Recess Sprinting during recess  Hispid Hares Starfish shaped like stars  Inconvenience `,
+              stuff:`Stuff`,
+              url:""
+          	},
+
+
+          ]
+        }
+      });
+
+
+</script>
+
+</body>
+</html>
