@@ -1,42 +1,37 @@
-# syllabus
-class website: https://kaaathy.com/risd-cp-2021
+Welcome to Glitch
+=================
 
-# example websites (week 3–)
-more detailed lessons here: [lesson plans](https://docs.google.com/document/d/1606Vq_ELeQ6d4PIADPZ3jifnsoMl8jUu_Srvody0A5A/edit#heading=h.6nrk4jj4sswg)
-(working doc, subject to change/be broken)
+Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
 
-**lesson 1: working with arrays**  
-start in glitch.me    
-we will learn how to load arrays of text into an HTML file    
+**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
 
-* watch coding train on arrays: [youtube](https://www.youtube.com/watch?v=VIQoUghHSxU)
-* example: [add arrays to DOM elements](https://kaaathy.com/risd-cp-2021/class-materials/2-dom/arrays-DOM.html) (this will make more sense in a demo)
-* example: [roll the dice](https://kaaathy.com/risd-cp-2021/class-materials/2-dom/example.html)
-
-**lesson 2: interactive poems with js**  
-continue in glitch.me  
-we will play with animation, onclick, event handlers, delays  
-
-* example: [reverse erasure poem](https://kaaathy.com/risd-cp-2021/class-materials/3-interaction/erasure.html)
-* example: [wiggly poem](https://kaaathy.com/risd-cp-2021/class-materials/3-interaction/wiggle.html)
-* example: [jquery draggable + adding images](https://kaaathy.com/risd-cp-2021/class-materials/3-interaction/draggable.html)
-
-**lesson 3: uploading to github pages**  
-download glitch.me files locally, create github repo  
-use github pages to host for free  
-
-* example (tbd): storing variables of user input
-* example: [making an archive / reader](https://kaaathy.com/risd-cp-2021/class-materials/5-reader/index.html) — uses vue.js, trendy new framework
-* task: find a website you like. inspect it and try to remake it on your own
+Find out more [about Glitch](https://glitch.com/about).
 
 
-**lesson 4: playing with rita rhyming**
+Your Project
+------------
 
-* task: play with examples on rita website: https://rednoise.org/rita/index.html#gallery
-* example: [changes to rhyming word on click](https://kaaathy.com/risd-cp-2021/class-materials/4-rita/romance-rhyme.html)
+### ← README.md
 
-**lesson 5: playing with word2vec on ML5 OR rita markov**
+That's this file, where you can tell people what your cool website does and how you built it.
 
-* tbd
+### ← index.html
 
+Where you'll write the content of your website. 
 
+### ← style.css
+
+CSS files add styling rules to your content.
+
+### ← script.js
+
+If you're feeling fancy you can add interactivity to your site with JavaScript.
+
+### ← assets
+
+Drag in `assets`, like images or music, to add them to your project
+
+Made by [Glitch](https://glitch.com/)
+-------------------
+
+\ ゜o゜)ノ
