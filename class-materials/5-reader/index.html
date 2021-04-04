@@ -4,71 +4,86 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 <style>
+
 body {
-  font-family:Arial;
-  background-color: thistle;
-  color: navy;
+  font-family:'DM Mono';
+  background-color: linen;
+  color: sienna;
   margin: 20px;
+  font-size: 14px;
 }
 
 h1 {
   font-weight: normal;
+  font-family: times;
+  font-size:50px;
 }
 
-.header{
-  padding-bottom: 40px;
+
+#container {
+  border-bottom:1px solid sienna;
+  padding-top: 20px;
 }
 
-#template {
-  border-bottom:1px solid navy;
-
-}
 .row {
-  display: flex;
-  flex-wrap:wrap;
-  border-top:1px solid navy;
-  padding: 20px 0px;
-  height:20px;
-  line-height: 1.5rem;
-  overflow: hidden;
-  transition: all 0.1s ease;
+  border-top:1px solid sienna;
+  padding: 10px 0px;
+  line-height: 2rem;
+  transition: all 0.5s ease;
+  text-transform: lowercase;
 
-}
-
-
-.topline {
-  padding-right: 40px;
-  height: 40px;
+  font-family: times;
+  font-size: 22px;
 
 }
 
 .row:hover {
-  overflow: visible;
-  height: auto;
-  /* color:thistle;
-  background-color: navy; */
+  font-size: 36px;
+  padding: 15px 0px;
+  cursor: pointer;
 }
 
-/* .row:hover .button{
-  color:thistle;
-  background-color: navy;
-  border: 1px solid thistle;
+.small {
+  font-family: 'DM Mono';
+  font-size: 14px;
 
-} */
+}
 
-/* .contents {
-  padding: 20px 0px;
-} */
+.inner-row {
+  max-width: 800px;
+  border:none;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+
+}
 
 
 .button {
+  font-family: 'DM Mono';
   font-size: 12px;
-  border: 1px solid navy;
+
+  border: 1px solid sienna;
   border-radius: 20px;
-  padding:4px 6px;
-  color:navy;
+  padding:4px 8px;
+
+  margin-left: 20px;
+
+  color:sienna;
+  right:0px;
+
+  transition: all 0.1s ease;
+
+}
+
+.button:hover{
+  background-color:sienna;
+  color:linen;
 
 }
 
@@ -76,97 +91,233 @@ a {
   text-decoration: none;
 }
 
+.decoration {
+  font-size:18px;
+  transform: rotate(0deg);
+  text-align: center;
+  animation: spin 1s infinite;
+}
+
+.top-level{
+  padding-bottom: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  justify-content: space-between;
+  max-width: 800px;
+
+}
+
+/* this isn't working for some reason */
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+    transform-origin: center center;
+
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: center center;
+
+  }
+}
+.flowers-field {
+  z-index: -100;
+  width:100px;
+  overflow: none;
+  position: absolute;
+  bottom: 0px;
+}
+
+.flowers-row{
+  width:100%;
+  height:60px;
+  text-align: center;
+  overflow: none;
+
+}
+
+.flowers {
+  width:400px;
+  position: relative;
+}
+
+@media (max-width: 780px) {
+
+  .index {
+    display: none;
+  }
+
+  .row {
+    flex-wrap: wrap;
+  }
+
+
+}
+
 </style>
 
 </head>
 <body>
 
-<div class="header">
-  <h1>computational poetics reader</h1>
-  Subtext
+risd graphic design | spring 2021 | <a href="https://kaaathy.com/risd-cp-2021" target="_blank" style="color:sienna">?</a>
+<br>
+  <h1>computational poetics <br><span style="font-family:'dm mono'; font-size:45px">reader</span></h1>
 </div>
 
-
-<div id="template">
+<div id="container">
 <!-- Figure this out tomorrow -->
+<div class ="top-level">
+  <div class="index small"></div>
+  <div>artist</div>
+  <div>project</div>
+  <div>mobile?</div>
+  <div></div>
+
+</div>
 
 <div class = "row" v-for="(item,index) in allItems">
     <!-- Activate this if you want a toggle effect -->
-      <div class ="topline">{{item.artist}}&nbsp;&nbsp;&nbsp;{{item.project}}&nbsp;&nbsp;&nbsp;
-        <a class = "button" v-bind:href="item.url" target="_blank">Read</a>
-        </div>
-      <br>
-      <div v-html="item.info"></div>
-    <!-- <div class="caret">X</div> -->
-
-    <!-- hidden content starts here -->
+    <div class="inner-row">
+      <div class="index small"><span class="decoration">✻</span>&nbsp;&nbsp;{{index}}</div>
+      <div>{{item.artist}}</div>
+      <div>{{item.project}}</div>
+      <div class="small">{{item.mobile}}</div>
+      <div><a class = "button" v-bind:href="item.url" target="_blank">Read</a></div></div>
+    </div>
 
 </div>
 
 <!-- end row element -->
 </div>
+<!-- end container element -->
+
+<div id="flowers-field">
+  <div class="flowers-row"></div>
+</div>
+
+<script>
+
+let winWidth = window.innerWidth;
+let winHeight = window.innerHeight;
+
+makeFlowers();
+
+function makeFlowers(){
+  for (let i = 0; i < 3; i++){
+    let newflowers = document.createElement('div');
+    let newflowersRow = document.createElement('div');
+
+    newflowers.classList.add('flowers');
+    newflowersRow.classList.add('flowers-row');
+
+    document.getElementById("flowers-field").appendChild(newflowersRow);
+    newflowersRow.appendChild(newflowers);
+
+    newflowers.innerHTML = `&nbsp;✿&nbsp;&nbsp;&nbsp;&nbsp;✻&nbsp;&nbsp;&nbsp;&nbsp;✻&nbsp;&nbsp;&nbsp;✿
+    <br>\\|// \\|//  \\\|//\\\|//`
+
+    newflowers.style.left = getRandomNumber(0, winWidth - 400) +"px";
+
+  }
+}
+
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+
+}
+
+</script>
 <script type = "module">
 
 
 new Vue({
-    el: "#template",
+    el: "#container",
     data: {
       shownitem: 0,
       allItems: [
-            {
-          		shown:false,
+          {
+
               line:``,
               artist:`Your name`,
               project:`Project name`,
-              info:`like some 14 year old girl waiting for her crush to glance back i 
-                    keep waiting for capitalism to end
-                    but it won’t end
-                    my adult life lover states
-                    on what will end:
-                    Libraries  Birds  Retirement  Recess Sprinting during recess  Hispid Hares Starfish shaped like stars  Inconvenience `,
+              mobile:`yes`,
+              info:` is a project about this or that or maybe those, and definitely something about there.`,
               stuff:`Stuff`,
               url:""
           	},
             {
-          		shown:false,
+
               line:``,
               artist:`Your name`,
               project:`Project name`,
-              info:`like some 14 year old girl waiting for her crush to glance back i 
-                    keep waiting for capitalism to end
-                    but it won’t end
-                    my adult life lover states
-                    on what will end:
-                    Libraries  Birds  Retirement  Recess Sprinting during recess  Hispid Hares Starfish shaped like stars  Inconvenience `,
-              stuff:`Stuff`,
+              mobile:`yes`,
+              info:` is a project about this or that or maybe those, and definitely something about there.`,
               url:""
           	},
             {
-          		shown:false,
+
               line:``,
               artist:`Your name`,
               project:`Project name`,
-              info:`like some 14 year old girl waiting for her crush to glance back i 
-                    keep waiting for capitalism to end
-                    but it won’t end
-                    my adult life lover states
-                    on what will end:
-                    Libraries  Birds  Retirement  Recess Sprinting during recess  Hispid Hares Starfish shaped like stars  Inconvenience `,
-              stuff:`Stuff`,
+              mobile:`yes`,
+              info:` is a project about this or that or maybe those, and definitely something about there.`,
               url:""
           	},
             {
-          		shown:false,
+
               line:``,
               artist:`Your name`,
               project:`Project name`,
-              info:`like some 14 year old girl waiting for her crush to glance back i 
-                    keep waiting for capitalism to end
-                    but it won’t end
-                    my adult life lover states
-                    on what will end:
-                    Libraries  Birds  Retirement  Recess Sprinting during recess  Hispid Hares Starfish shaped like stars  Inconvenience `,
-              stuff:`Stuff`,
+              mobile:`yes`,
+              info:` is a project about this or that or maybe those, and definitely something about there.`,
+              url:""
+          	},
+            {
+
+              line:``,
+              artist:`Your name`,
+              project:`Project name`,
+              mobile:`yes`,
+              info:` is a project about this or that or maybe those, and definitely something about there.`,
+              url:""
+          	},
+            {
+
+              line:``,
+              artist:`Your name`,
+              project:`Project name`,
+              mobile:`yes`,
+              info:` is a project about this or that or maybe those, and definitely something about there.`,
+              url:""
+          	},
+            {
+
+              line:``,
+              artist:`Your name`,
+              project:`Project name`,
+              mobile:`yes`,
+              info:` is a project about this or that or maybe those, and definitely something about there.`,
+              url:""
+          	},
+            {
+
+              line:``,
+              artist:`Your name`,
+              project:`Project name`,
+              mobile:`yes`,
+              info:` is a project about this or that or maybe those, and definitely something about there.`,
+              url:""
+          	},
+            {
+
+              line:``,
+              artist:`Your name`,
+              project:`Project name`,
+              mobile:`yes`,
+              info:` is a project about this or that or maybe those, and definitely something about there.`,
               url:""
           	},
 

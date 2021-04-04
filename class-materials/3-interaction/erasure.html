@@ -56,7 +56,9 @@ div .wordItem:hover{
 
   // LOAD DATA + BREAK INTO WORDS
   function splitTxt(){
-      words = importedTxt.split(/\W+/);
+      // words = importedTxt.split(/\W+/);
+      words = importedTxt.split('');
+
   }
 
   // MAKE IT APPEAR IN DOM
@@ -70,7 +72,6 @@ div .wordItem:hover{
         newdiv.onclick = function(){
             newdiv.classList.toggle("read");
             console.log("clicked");
-
             }
 
         document.getElementById("content").appendChild(newdiv);
@@ -81,7 +82,6 @@ div .wordItem:hover{
   }
 
 
-//work on toggle Later
 
 function randomRhyme(word){
   let rhymes;
