@@ -11,9 +11,13 @@ body {
 
 }
 
+.hasRhymes:hover{
+  background-color: aliceblue;
+  cursor: pointer;
+}
+
 #content {
   width:100%;
-  /* background-color: pink; */
   display: flex;
   flex-direction: row;
   flex-wrap:wrap;
@@ -33,7 +37,7 @@ div .wordItem {
   <script src="https://unpkg.com/rita"></script>
   <!-- <div id="div"></div> -->
   <div id="content"></div>
-  <button onclick="update()">another one</button>
+  <button onclick="update()">reset</button>
 
   <script>
 
@@ -48,35 +52,15 @@ div .wordItem {
       console.log(RiTa.analyze(data));
 
 
-      // read();
-
-      // function read()
-      // {
-      //      var textFile = new XMLHttpRequest();
-      //      textFile.open("GET", "romance.txt", true);
-      //      textFile.onreadystatechange = function()
-      //      {
-      //           if (textFile.readyState === 4)
-      //           {
-      //                // Makes sure the document is ready to parse.
-      //                if (textFile.status === 200)
-      //                {
-      //                     // Makes sure it's found the file.
-      //                     // document.getElementById("div").innerHTML = textFile.responseText;
-      //                     data = textFile.responseText;
-      //                     console.log(textFile.responseText);
-      //
-      //                }
-      //           }
-      //      }
-           // textFile.send(null);
-      // }
-
   // LOAD DATA + BREAK INTO WORDS
   function setup(){
-      data = "like some fourteen-year-old girl waiting for her crush to glance back i keep waiting for capitalism to end but it won’t end my adult life lover states";
-      let parts = RiTa.pos(data);
-      // console.log(parts);
+      data = `Two roads diverged in a yellow wood,
+And sorry I could not travel both
+And be one traveler, long I stood
+And looked down one as far as I could
+To where it bent in the undergrowth`;
+      let punctuationless = data.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+      data = punctuationless.replace(/\s{2,}/g," ");
       words = RiTa.tokenize(data);
   }
 
@@ -88,15 +72,15 @@ div .wordItem {
         newdiv.id = 'word-' + i;
         newdiv.classList.add("wordItem");
         newdiv.innerHTML = words[i];
+        if (randomRhyme(words[i]) != words[i]){
+          newdiv.classList.add("hasRhymes");
+        }
         document.getElementById("content").appendChild(newdiv);
     }
     console.log("BUILD COMPLETE");
 
   }
 
-  // function onclick(object){
-  //     object.innerHTML=RiTa.randomWord({targetPos:"nn"});
-  // }
 
   function update(){
       for (i=0; i<words.length;i++){
@@ -111,14 +95,7 @@ div .wordItem {
       console.log("updated");
 
     }
-    //ASK WILlY'S HELP
 
-// document.addEventListener('click',function(e){
-//    if(e.target && e.target.id== 'word-1'){
-//          //do something
-//          e.innerHTML = "WORKED";
-//     }
-// });
 
 //GIVE ME A RANDOM WORD ON CLICK
 // document.getElementById("content").addEventListener("click",function(e) {
@@ -129,6 +106,15 @@ div .wordItem {
 //
 // 	}
 //
+// });
+
+//ASK WILlY'S HELP
+
+// document.addEventListener('click',function(e){
+//    if(e.target && e.target.id== 'word-1'){
+//          //do something
+//          e.innerHTML = "WORKED";
+//     }
 // });
 
 //GIVE ME A RHYMING WORD ON CLICK
@@ -159,11 +145,6 @@ function randomRhyme(word){
     else{
         return word;
     }
-  // }
-  // else{
-  //   return word;
-  //
-  // }
 }
 
   </script>
