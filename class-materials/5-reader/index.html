@@ -14,6 +14,9 @@ body {
   color: sienna;
   margin: 20px;
   font-size: 14px;
+  user-select: none;
+  overflow-x: none;
+
 }
 
 h1 {
@@ -43,7 +46,7 @@ h1 {
 .row:hover {
   font-size: 36px;
   padding: 15px 0px;
-  cursor: pointer;
+  cursor: default;
 }
 
 .small {
@@ -64,16 +67,13 @@ h1 {
 }
 
 
-.button {
+.button, .toplink {
   font-family: 'DM Mono';
   font-size: 12px;
 
   border: 1px solid sienna;
   border-radius: 20px;
   padding:4px 8px;
-
-  margin-left: 20px;
-
   color:sienna;
   right:0px;
 
@@ -81,7 +81,16 @@ h1 {
 
 }
 
-.button:hover{
+.toplink {
+  margin-bottom: 50px;
+
+}
+.button{
+  margin-left: 20px;
+
+}
+
+.button:hover, .toplink:hover{
   background-color:sienna;
   color:linen;
 
@@ -136,7 +145,6 @@ a {
   height:60px;
   text-align: center;
   overflow: none;
-
 }
 
 .flowers {
@@ -162,16 +170,24 @@ a {
 </head>
 <body>
 
-risd graphic design | spring 2021 | <a href="https://kaaathy.com/risd-cp-2021" target="_blank" style="color:sienna">?</a>
+risd graphic design | spring 2021 | <a target="_blank" href="https://kaaathy.com/risd-cp-2021" target="_blank" style="color:sienna">about</a>
 <br>
   <h1>computational poetics <br><span style="font-family:'dm mono'; font-size:45px">reader</span></h1>
-</div>
 
+<!-- top links -->
+<a class = "toplink" target = "_blank" href="https://docs.google.com/document/d/1xdPg3TvgzILBlLPnW5OKQqiwgfRaISCfeQQSOiVnoMI/edit?usp=sharing">
+  student writing, on writing
+</a><br><br>
+
+<a class = "toplink" target = "_blank" href="https://docs.google.com/document/d/1xtTQAWTcW8n_i1RmMqXKYh9pzZFiFX7ts4g8Sr49YCU/edit">
+  re-indexing roots/influences
+</a><br><br>
+
+<!-- content -->
 <div id="container">
-<!-- Figure this out tomorrow -->
-<div class ="top-level">
+  <div class ="top-level">
   <div class="index small"></div>
-  <div>artist</div>
+  <div>name</div>
   <div>project</div>
   <div>mobile?</div>
   <div></div>
@@ -193,10 +209,12 @@ risd graphic design | spring 2021 | <a href="https://kaaathy.com/risd-cp-2021" t
 <!-- end row element -->
 </div>
 <!-- end container element -->
-
+<!-- flowers -->
 <div id="flowers-field">
   <div class="flowers-row"></div>
 </div>
+
+
 
 <script>
 
@@ -241,19 +259,37 @@ new Vue({
           {
 
               line:``,
-              artist:`Your name`,
-              project:`Project name`,
-              mobile:`yes`,
+              artist:`Daphne Hsu`,
+              project:`Eating at the Same Table`,
+              mobile:`no`,
               info:` is a project about this or that or maybe those, and definitely something about there.`,
               stuff:`Stuff`,
-              url:""
+              url:"https://eating-at-the-same-table.glitch.me/"
+          	},
+            {
+
+              line:``,
+              artist:`Jie Jian`,
+              project:`Download Folder Diary`,
+              mobile:`no`,
+              info:` is a project about this or that or maybe those, and definitely something about there.`,
+              url:"https://download-folder-diary.glitch.me/"
+          	},
+            {
+
+              line:``,
+              artist:`Jie Jian`,
+              project:`Collective Recipe`,
+              mobile:`no`,
+              info:` is a project about this or that or maybe those, and definitely something about there.`,
+              url:"https://collective-recipe.glitch.me/"
           	},
             {
 
               line:``,
               artist:`Your name`,
               project:`Project name`,
-              mobile:`yes`,
+              mobile:`no`,
               info:` is a project about this or that or maybe those, and definitely something about there.`,
               url:""
           	},
@@ -262,7 +298,7 @@ new Vue({
               line:``,
               artist:`Your name`,
               project:`Project name`,
-              mobile:`yes`,
+              mobile:`no`,
               info:` is a project about this or that or maybe those, and definitely something about there.`,
               url:""
           	},
@@ -271,7 +307,7 @@ new Vue({
               line:``,
               artist:`Your name`,
               project:`Project name`,
-              mobile:`yes`,
+              mobile:`no`,
               info:` is a project about this or that or maybe those, and definitely something about there.`,
               url:""
           	},
@@ -280,7 +316,7 @@ new Vue({
               line:``,
               artist:`Your name`,
               project:`Project name`,
-              mobile:`yes`,
+              mobile:`no`,
               info:` is a project about this or that or maybe those, and definitely something about there.`,
               url:""
           	},
@@ -289,7 +325,7 @@ new Vue({
               line:``,
               artist:`Your name`,
               project:`Project name`,
-              mobile:`yes`,
+              mobile:`no`,
               info:` is a project about this or that or maybe those, and definitely something about there.`,
               url:""
           	},
@@ -298,25 +334,7 @@ new Vue({
               line:``,
               artist:`Your name`,
               project:`Project name`,
-              mobile:`yes`,
-              info:` is a project about this or that or maybe those, and definitely something about there.`,
-              url:""
-          	},
-            {
-
-              line:``,
-              artist:`Your name`,
-              project:`Project name`,
-              mobile:`yes`,
-              info:` is a project about this or that or maybe those, and definitely something about there.`,
-              url:""
-          	},
-            {
-
-              line:``,
-              artist:`Your name`,
-              project:`Project name`,
-              mobile:`yes`,
+              mobile:`no`,
               info:` is a project about this or that or maybe those, and definitely something about there.`,
               url:""
           	},
