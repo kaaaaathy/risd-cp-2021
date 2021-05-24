@@ -44,7 +44,7 @@ h1 {
 }
 
 .row:hover {
-  font-size: 36px;
+  font-size: 32px;
   padding: 15px 0px;
   cursor: default;
 }
@@ -189,7 +189,7 @@ risd graphic design | spring 2021 | <a target="_blank" href="https://kaaathy.com
   <div class="index small"></div>
   <div>name</div>
   <div>project</div>
-  <div>mobile?</div>
+  <!-- <div>mobile?</div> -->
   <div></div>
 
 </div>
@@ -198,9 +198,9 @@ risd graphic design | spring 2021 | <a target="_blank" href="https://kaaathy.com
     <!-- Activate this if you want a toggle effect -->
     <div class="inner-row">
       <div class="index small"><span class="decoration">✻</span>&nbsp;&nbsp;{{index}}</div>
-      <div>{{item.artist}}</div>
-      <div>{{item.project}}</div>
-      <div class="small">{{item.mobile}}</div>
+      <div style ="padding-right:5px;">{{item.artist}}</div>
+      <div style ="padding-left:5px;">{{item.project}}</div>
+      <!-- <div class="small">{{item.mobile}}</div> -->
       <div><a class = "button" v-bind:href="item.url" target="_blank">Read</a></div></div>
     </div>
 
@@ -266,15 +266,39 @@ new Vue({
               stuff:`Stuff`,
               url:"https://eating-at-the-same-table.glitch.me/"
           	},
+
+
             {
 
               line:``,
-              artist:`Jie Jian`,
-              project:`Download Folder Diary`,
+              artist:`Lara Karadogan`,
+              project:`Base Pairs`,
               mobile:`no`,
               info:` is a project about this or that or maybe those, and definitely something about there.`,
-              url:"https://download-folder-diary.glitch.me/"
+              url:"https://base-pair.glitch.me/"
           	},
+
+
+            {
+
+              line:``,
+              artist:`Amy Choi`,
+              project:`Refresh Memory`,
+              mobile:`no`,
+              info:` is a project about this or that or maybe those, and definitely something about there.`,
+              url:"https://refresh-memory.glitch.me/"
+          	},
+
+            {
+
+              line:``,
+              artist:`lai xu`,
+              project:`Recaptcha Poem`,
+              mobile:`no`,
+              info:` is a project about this or that or maybe those, and definitely something about there.`,
+              url:"https://recaptcha-poem.glitch.me"
+          	},
+
             {
 
               line:``,
@@ -287,57 +311,106 @@ new Vue({
             {
 
               line:``,
-              artist:`Your name`,
-              project:`Project name`,
+              artist:`Lara Karadogan`,
+              project:`Input Map`,
               mobile:`no`,
               info:` is a project about this or that or maybe those, and definitely something about there.`,
-              url:""
+              url:"https://input-map.glitch.me/"
           	},
             {
 
               line:``,
-              artist:`Your name`,
-              project:`Project name`,
+              artist:`Mariana Ramos Ortiz`,
+              project:`How to Play Hopscotch`,
               mobile:`no`,
               info:` is a project about this or that or maybe those, and definitely something about there.`,
-              url:""
+              url:"https://www.are.na/mariana-r-o/cp-3"
           	},
             {
 
               line:``,
-              artist:`Your name`,
-              project:`Project name`,
+              artist:`Ranxin Zhou`,
+              project:`Normal Match`,
               mobile:`no`,
               info:` is a project about this or that or maybe those, and definitely something about there.`,
-              url:""
+              url:"https://editor.p5js.org/IAMZRX/full/-aarqqIsc"
+          	},
+
+            {
+
+              line:``,
+              artist:`asher white`,
+              project:`Iterations on Care`,
+              mobile:`no`,
+              info:` is a project about this or that or maybe those, and definitely something about there.`,
+              url:"https://iterations-on-care.glitch.me/"
+            },
+
+
+            {
+
+              line:``,
+              artist:`Christie Zhong`,
+              project:`Collective Shelf`,
+              mobile:`no`,
+              info:` is a project about this or that or maybe those, and definitely something about there.`,
+              url:"https://finalshelf.glitch.me/index.html"
+            },
+            {
+
+              line:``,
+              artist:`Mariana Ramos Ortiz`,
+              project:`(Untitled)`,
+              mobile:`no`,
+              info:` is a project about this or that or maybe those, and definitely something about there.`,
+              url:"https://www.are.na/mariana-r-o/cp-final-58ihpir2eqg"
           	},
             {
 
               line:``,
-              artist:`Your name`,
-              project:`Project name`,
+              artist:`Amy Choi`,
+              project:`Rewriting Hangul`,
               mobile:`no`,
               info:` is a project about this or that or maybe those, and definitely something about there.`,
-              url:""
+              url:"https://www.are.na/amy-choi-_y0yut8ez0q/rewriting-hangul"
           	},
             {
 
               line:``,
-              artist:`Your name`,
-              project:`Project name`,
+              artist:`asher white`,
+              project:`Reddit Dream Poems`,
               mobile:`no`,
               info:` is a project about this or that or maybe those, and definitely something about there.`,
-              url:""
+              url:"https://reddit-dream-poems.glitch.me/"
+            },
+            {
+
+              line:``,
+              artist:`Trent Kim`,
+              project:`Name I'm Feeling`,
+              mobile:`no`,
+              info:` is a project about this or that or maybe those, and definitely something about there.`,
+              url:"https://name-im-feeling.glitch.me/"
           	},
             {
 
               line:``,
-              artist:`Your name`,
-              project:`Project name`,
+              artist:`Jie Jian`,
+              project:`Download Folder Diary`,
               mobile:`no`,
               info:` is a project about this or that or maybe those, and definitely something about there.`,
-              url:""
+              url:"https://download-folder-diary.glitch.me/"
           	},
+            {
+
+              line:``,
+              artist:`Christie Zhong`,
+              project:`Instruction for a Hug`,
+              mobile:`no`,
+              info:` is a project about this or that or maybe those, and definitely something about there.`,
+              url:"https://www.are.na/christie-zhong/instruction-for-a-hug"
+            }
+
 
 
           ]
