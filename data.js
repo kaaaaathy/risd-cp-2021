@@ -1,7 +1,7 @@
 export default
 [ {
   shown:false,
-  date:"Due 3/01",
+  date:"Due 9/16",
   project:"Project 0",
   name:"Re-Indexing",
   content:`
@@ -17,7 +17,7 @@ export default
 
   {
     shown:false,
-    date:"Due 3/08",
+    date:"Due 9/23",
     project:"Project 1",
     name:"Transcription",
     content:`
@@ -37,7 +37,7 @@ export default
   },
 {
 		shown:false,
-    date:"Due 4/05",
+    date:"Due 10/14",
 		project:"Project 2",
     name:"Programmatic / Poetic",
 		content:`
@@ -57,7 +57,7 @@ export default
 	},
 	{
 		shown:false,
-    date:"Due 4/26",
+    date:"Due 11/04",
 		project:"Project 3",
     name:"Embodied Voice(s)",
 		content:`
@@ -78,7 +78,7 @@ export default
 
 	{
 		shown:false,
-    date:"Due 5/17",
+    date:"Due 12/02",
 		project:"Project 4",
     name:"New Methods",
 		content:`
