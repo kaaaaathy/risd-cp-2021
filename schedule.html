@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="accordion.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="schedule.css" media="screen"/>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 
@@ -10,13 +10,10 @@
 <body>
 
 <div class="header">
-  &#10000; Schedule
-  <h3>Most weeks, we will have small group crits on projects-in-progress.<br>We will start each new week with a student share-out and a dicussion of the readings.</h3>
+  &#10000; &nbsp; Schedule
+  <h2 style = "padding-top:0px">Most weeks, we will have small group crits on projects-in-progress.<br>We will start each new week with a student share-out and a discussion of the readings.</h2>
 </div>
-
-
 <div id="schedule">
-
 <div class = "row" v-for="(week,index) in weeks">
     <div class = "item" @click="week.shown = !week.shown">
       <div class ="item-text">{{week.date}} &nbsp;&nbsp; Week {{index+1}}</div>
@@ -32,8 +29,8 @@
       <br>
       <div v-html="week.img" class="imageCaption"></div>
       <br>
-      <h3><span class="highlight">
-        In Class</span></h3>
+      <h2><span class="highlight">
+        In Class</span></h2>
         <!-- This is H3 on purpose!! -->
       <div v-html="week.inClass"></div>
 
@@ -42,12 +39,9 @@
       <div v-html="week.reading"></div>
 
       <h2><span class="highlight">
-        Project</span></h2>
+        After Class</span></h2>
       <div v-html="week.project"></div>
 
-      <!-- <h2><span class="highlight">
-        Links</span></h2>
-      <div v-html="week.bonus"></div> -->
     </div>
 </div>
 <!-- end row element -->
@@ -67,7 +61,7 @@ new Vue({
             {
           		shown:false,
               date:"9/09",
-          		theme:"What is Computational Poetics?",
+          		theme:`What is Computational Poetics?`,
           		due:``,
               questions:`What is computational poetics? What does it mean to apply computational ingredients to language? What are the poetic opportunities of computation? What are the methods + implications?`,
               img:`<img src="https://kaaathy.com/risd-cp-2021/imgs/parrishcrop.png" class="imageCaption"><br>Allison Parrish, Compass Poems`,
@@ -82,14 +76,17 @@ new Vue({
                 <br><br>
                 <h3>Getting Set Up</h3>
                 <li>Collect a list of corpuses (source materials). Add to class corpus list
-                <li>Create a list of tools and computational practices which you feel are within your skill set
                 <li>Sign up for presentations
+                <br><br>
+                <h3>Share in the Discord</h3>
+                <li>How would you describe your experience with tech tools and coding?
+                <li>What is an example of a type of project you would like to do? Share an example by another artist/designer/technologist.
+                <li>What tools would you like support in working with? (e.g.  HTML/CSS, javascript in browser, ml5.js, p5.js, RiTa.js, hosting a website, Twitter bots) It’s okay if you don’t know what the tool might be called
+                <li>What tools would you like to better understand/play/explore? (e.g. GPT2, Deep fakes, Neural nets) It’s okay if you don’t know what the tool might be called
                 <br>`
                 ,
               reading:`
               <li><a href="http://kaaathy.com/risd-cp-2021/class-materials/books/Glitch_Feminism_01_02.pdf" target="_blank">Glitch Feminism Manifesto</a> (Intro & Ch. 1)
-              <li><a href="http://www.faculty.umb.edu/gary_zabel/Courses/Art%20and%20Philosophy%20in%20SL%20and%20Other%20Virtual%20Worlds/Texts/cyborg_manifesto.pdf" target="_blank">Cyborg Manifesto</a> (p1-11)
-              <li><a href="https://unbag.net/end/black-gooey-universe" target="_blank">Black Gooey Universe</a>
               `,
               project:`
               <li>${projects[0].project}: ${projects[0].name} </li>
@@ -98,7 +95,7 @@ new Vue({
           	{
           		shown:false,
               date:"9/16",
-          		theme:"Re-Indexing Computer History / Roots",
+          		theme:"Computational Reference Potluck",
           		due:`Project 0 Due`,
               questions:`How does the history of computational tools influence our present practice? Where do the roots show up? Who are we in dialogue with when we do this work, and where might our tools betray our creators?`,
               img:`<img src="https://kaaathy.com/risd-cp-2021/imgs/gooey.jpg" class="imageCaption"><br>American Artist, BLACK GOOEY UNIVERSE`,
@@ -114,11 +111,30 @@ new Vue({
               Nabil Hassein <a href="https://nabilhassein.github.io/blog/generative-DOOM/" target="_blank">generative-DOOM</a>
               <li>Discuss next 3 weeks: Methodologies
               `,
-              reading:`<li>Mary Bucholtz | <a href="http://icar.cnrs.fr/ecole_thematique/tranal_i/documents/Buscholz_Transcription.pdf" target="_blank">Politics of Transcription</a>`,
+              reading:``,
               project:`<li>${projects[1].project}: ${projects[1].name} </li>
               `,
           	},
-          	{
+            {
+          		shown:false,
+              date:"9/30",
+          		theme:"Randomness, Chance, Oracles",
+          		due:``,
+              questions:`When inviting chance as an ingredient or collaborator, what fractalline futures are possible? How does statistical randomness become a metaphor?`,
+              img:`<img src="https://kaaathy.com/risd-cp-2021/imgs/merrill_ouija.jpg" class="imageCaption"><br>James Merrill's homemade Ouija board`,
+              inClass:`
+              <li>Student share + reading discussion
+              <li>You can adapt the score you wrote in class 3. Rewrite a list of new parameters: nouns, verbs, etc.
+              <li>Try doing this with news headlines. Replace key nouns and verbs.
+              <li>Look at: Lillian-Yvonne Bertram <a href="http://www.noemipress.org/catalog/poetry/travesty-generator/" target="_blank">Travesty Generator</a>, James Merrill's <a href="https://yalealumnimagazine.com/articles/3363" target="_blank">Ouija Board</a>, Kimiko Hahn on <a href="https://bombmagazine.org/articles/kimiko-hahn/" target="_blank">Zuihitsu</a>, or “running brush,” and cultivating randomness
+              <li><span class="tech">Required</span> Start to play with <a href=
+              https://docs.google.com/document/d/1606Vq_ELeQ6d4PIADPZ3jifnsoMl8jUu_Srvody0A5A/edit#heading=h.biazm6nhdt7x
+               target="_blank">arrays</a> and add randomization</span>`,
+              reading:`<li>Christian Bok | Excerpts from <a href="https://ubu.com/sound/bok.html" target="_blank">Eunoia</a>
+              <li>AEON | <a href="https://aeon.co/essays/in-the-beginning-was-the-word-and-the-word-was-embodied" target="_blank">In the beginning was the word, and the word was embodied</a>`,
+              project:`Continue ${projects[2].project}: ${projects[2].name}`
+          	},
+            {
           		shown:false,
               date:"9/23",
           		theme:"Functions, Scores, Rituals",
@@ -133,30 +149,11 @@ new Vue({
               <li>Look at: <a href="https://kameelahr.com/Scoring-the-Stacks-2019" target="_blank">Scoring the Stacks</a> / Benjamin Patterson / Field Guide to iLanding / etc
               <li>Write a score which describes a ritual
               <li>Text + bodies + scores exercise (inspired by Kameelah Rasheed). Afterwards, write a new score for reading
-              <li><span class="tech">Required</span> Start to play with <a href=
-              https://docs.google.com/document/d/1606Vq_ELeQ6d4PIADPZ3jifnsoMl8jUu_Srvody0A5A/edit#heading=h.biazm6nhdt7x
-               target="_blank">arrays</a> and add randomization</span>`,
-              reading:`
-              <li>Padgett, Ron | <a href="https://files.eric.ed.gov/fulltext/ED404618.pdf" target="_blank">Creative Reading: What It Is, How To Do It</a>`,
+              <li><span class="tech">Required</span> Building on last week, we'll create a <a href="https://docs.google.com/document/d/1606Vq_ELeQ6d4PIADPZ3jifnsoMl8jUu_Srvody0A5A/edit#heading=h.2c8c0zvbxdrm" target="_blank">simple HTML website</a> which will show random text</span>`,
+              reading:`<li>Padgett, Ron | <a href="https://files.eric.ed.gov/fulltext/ED404618.pdf" target="_blank">Creative Reading: What It Is, How To Do It</a>`,
               project:`${projects[2].project}: ${projects[2].name}`,
           	},
-          	{
-          		shown:false,
-              date:"9/30",
-          		theme:"Randomness, Chance, Oracles",
-          		due:``,
-              questions:`When inviting chance as an ingredient or collaborator, what fractalline futures are possible? How does statistical randomness become a metaphor?`,
-              img:`<img src="https://kaaathy.com/risd-cp-2021/imgs/merrill_ouija.jpg" class="imageCaption"><br>James Merrill's homemade Ouija board`,
-              inClass:`
-              <li>Student share + reading discussion
-              <li>You can adapt the score you wrote in class 3. Rewrite a list of new parameters: nouns, verbs, etc.
-              <li>Try doing this with news headlines. Replace key nouns and verbs.
-              <li>Look at: Lillian-Yvonne Bertram <a href="http://www.noemipress.org/catalog/poetry/travesty-generator/" target="_blank">Travesty Generator</a>, James Merrill's <a href="https://yalealumnimagazine.com/articles/3363" target="_blank">Ouija Board</a>, Kimiko Hahn on <a href="https://bombmagazine.org/articles/kimiko-hahn/" target="_blank">Zuihitsu</a>, or “running brush,” and cultivating randomness
-              <li><span class="tech">Required</span> Building on last week, we'll create a <a href="https://docs.google.com/document/d/1606Vq_ELeQ6d4PIADPZ3jifnsoMl8jUu_Srvody0A5A/edit#heading=h.2c8c0zvbxdrm" target="_blank">simple HTML website</a> which will show random text</span>`,
-              reading:`<li>Christian Bok | Excerpts from <a href="https://ubu.com/sound/bok.html" target="_blank">Eunoia</a>
-              <li>AEON | <a href="https://aeon.co/essays/in-the-beginning-was-the-word-and-the-word-was-embodied" target="_blank">In the beginning was the word, and the word was embodied</a>`,
-              project:`Continue ${projects[2].project}: ${projects[2].name}`
-          	},
+
             {
           		shown:false,
               date:"10/07",
@@ -176,7 +173,7 @@ We will read these aloud in class.
 <a href="https://drive.google.com/file/u/2/d/1yaUxwGOKxhiu8cq798yVUCbSh3nix_jh/view?usp=sharing" target="_blank">Autosummarize Excerpts</a>
 Christan Bok DNA + Eunoia /
 Anthology: <a href="https://airlightmagazine.org/etc/podcasts/language-is-failing-us-monica-de-la-torre-and-alex-balgiu-on-women-in-concrete-poetry-1959-1979-air-light-podcast-3/" target="_blank">Women in Concrete Poetry 1959-1979</a>`,
-              reading:`<li>Borges | <a href="http://mycours.es/gamedesign2012/files/2012/08/The-Garden-of-Forking-Paths-Jorge-Luis-Borges-1941.pdf" target="_blank">Garden of Forking Paths</a>`,
+              reading:`<li>Mary Bucholtz | <a href="http://icar.cnrs.fr/ecole_thematique/tranal_i/documents/Buscholz_Transcription.pdf" target="_blank">Politics of Transcription</a>`,
               project:`Finish ${projects[2].project}: ${projects[2].name}`,
           	},
             {

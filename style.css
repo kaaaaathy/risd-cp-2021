@@ -4,6 +4,7 @@ Thanks to: Clement Valla
 Version: 1.0
 */
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 *{
  	margin: 0;
@@ -51,13 +52,14 @@ body {
 
 	font-size: 14px;
   line-height: 30px;
-  font-weight: bold;
-  font-family: 'DM Mono','Inconsolata','PT Sans','Courier',monospace;
+  /* font-weight: bold; */
+  /* font-family: 'DM Mono','Inconsolata','PT Sans','Courier',monospace; */
+  /* font-family: Arial, sans-serif; */
+  font-family: 'Courier Prime','Courier',monospace;
 
   letter-spacing: 0.5px;
   box-shadow: 5px 5px 0px black;
   border-radius: 8px;
-
 	cursor: move;
 	border: solid 2px black;
 	background-color: white;
@@ -73,7 +75,9 @@ body {
   line-height: 35px;
   padding-bottom: 10px;
   font-weight: normal;
-  font-family:'Times New Roman', Times, serif;
+  /* font-family:'Times New Roman', Times, serif; */
+  font-family:Arial,san-serif;
+
 }
 
 #description {
@@ -106,12 +110,6 @@ body {
 	width:auto;
 }
 
-/* #navigation a, div.about{
-	color: inherit;
-	padding: 0;
-	text-decoration: none;
-	padding: 1px;
-} */
 
 #navigation a.active{
 	color: blue;
