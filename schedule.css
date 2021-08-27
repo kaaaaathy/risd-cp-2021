@@ -3,21 +3,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body {
-  margin: 0 100px;
+  margin: 80px;
   color: black;
   font-weight: normal;
   /* font-family: 'DM Mono','Inconsolata','Courier',monospace; */
   /* font-family: 'Courier Prime','Courier',monospace; */
   font-family: Arial, sans-serif;
 
-  font-size:18px;
+  font-size:16px;
   line-height: 28px;
 
 }
 
 .header{
-  margin-top:100px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
+  max-width: 700px;
+
 }
 
 a {
@@ -35,7 +36,7 @@ h2 {
 h3 {
   font-weight: normal;
   text-decoration: underline;
-  font-size:18px;
+  font-size:16px;
 
 }
 /* h2 {
@@ -75,7 +76,7 @@ p, li {
 #schedule, #projects {
   border-top: 1px solid black;
   margin-bottom: 100px;
-  max-width: 800px;
+  max-width: 700px;
 }
 
 .row {
@@ -87,7 +88,7 @@ p, li {
   justify-content: flex-start;
   align-items: baseline;
   flex-wrap: wrap;
-  padding: 20px 0px;
+  padding: 10px 0px;
   cursor: pointer;
 }
 
@@ -104,7 +105,7 @@ p, li {
 }
 
 .item-heading  {
-  padding: 10px 0px;
+  padding: 15px 0px;
 }
 
 .item-heading, .header{
@@ -131,7 +132,7 @@ p, li {
 
 
 /* ASSIGNMENTS PAGE SPECIFIC */
-.due {
+/* .due {
   font-size: 14px;
   background-color: yellow;
   width:90px;
@@ -151,7 +152,7 @@ p, li {
 .assignments{
   margin-left:130px;
 
-}
+} */
 
 /* SCHEDULE PAGE SPECIFIC */
 
@@ -171,11 +172,16 @@ p, li {
 
   .item-heading{
     width: 100%;
-    line-height: 36px;
+    line-height: 40px;
+    padding: 0;
 
   }
   .contents{
     margin-left: 0px;
   }
+
+  .dueSchedule {
+    margin: 5px 0px 10px 0;
+}
 
 }
