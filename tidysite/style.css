@@ -1,0 +1,321 @@
+Css 1
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+
+#container {
+  border-bottom:1px solid white;
+  padding-top: 20px;
+}
+
+h1 {
+  font-weight: inherit;
+  font-size: 32px;
+  font-family: 'courier prime';
+
+
+}
+h2 {
+  font-weight: inherit;
+  font-size: 24px;
+  line-height: 32px;
+  font-family: 'courier prime';
+
+}
+
+/* p {
+  line-height: 28px;
+
+} */
+.row {
+  border-top:1px solid white;
+  padding: 10px 20px;
+  line-height: 2rem;
+  transition: all 0.5s ease;
+  /* text-transform: lowercase; */
+
+  font-size:18px;
+
+}
+
+/* .row:hover {
+  background: white;
+  color:mediumorchid;
+  /* font-size: 32px;
+  padding: 15px 0px;
+  cursor: default;
+} */
+
+.small {
+  font-family: 'courier prime';
+  font-size: 14px;
+
+}
+
+.inner-row {
+  max-width: 800px;
+  border:none;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  letter-spacing: 0.5px;
+
+
+}
+
+
+.button, .toplink {
+  font-size: 14px;
+  font-family: 'Courier Prime','Courier',monospace;
+  text-transform: uppercase;
+
+  border: 1px solid white;
+  border-radius: 20px;
+  padding:4px 8px;
+  color:white;
+  right:0px;
+
+  transition: all 0.1s ease;
+
+}
+
+.toplink {
+  margin-bottom: 50px;
+
+}
+.button{
+  margin-left: 20px;
+
+}
+
+.button:hover, .toplink:hover{
+  background-color:white;
+  color:black;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+.decoration {
+  font-size:18px;
+  transform: rotate(0deg);
+  text-align: center;
+  animation: spin 1s infinite;
+}
+
+.top-level{
+  padding-bottom: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  justify-content: space-between;
+  max-width: 800px;
+
+}
+
+.flowers-field {
+  z-index: -100;
+  width:100px;
+  overflow: none;
+  position: absolute;
+  bottom: 0px;
+}
+
+.flowers-row{
+  width:100%;
+  height:60px;
+  font-family:'courier prime',monospace,mono!important;
+
+  text-align: center;
+  overflow: none;
+}
+
+.flowers {
+  width:400px;
+  position: relative;
+}
+
+@media (max-width: 780px) {
+
+  .index {
+    display: none;
+  }
+
+  .row {
+    flex-wrap: wrap;
+  }
+
+
+}
+
+/* IMPORTED ABOVE */
+body {
+  margin: 80px;
+  font-weight: normal;
+  /* font-family: 'DM Mono','Inconsolata','Courier',monospace; */
+  /* font-family: 'Courier Prime','Courier',monospace; */
+  font-family: Arial, sans-serif;
+  /* color:#333333; */
+  color:white;
+
+  background: mediumorchid;
+
+  /* user-select: none; */
+
+}
+
+
+a {
+  color:white;
+  border-bottom: 0.5px solid white;
+}
+
+/* table styles */
+#schedule {
+  /* border-top: 1px solid silver; */
+  margin-bottom: 100px;
+  max-width: 720px;
+  letter-spacing: 0.5px;
+
+}
+
+.header{
+  padding-bottom: 40px;
+  max-width: 720px;
+
+}
+
+.subtitle {
+  font-family: 'Courier Prime','Courier',monospace;
+  font-size: 16px;
+  padding-bottom: 30px;
+
+}
+
+/* font styles */
+
+h3 {
+  font-family: 'Courier Prime','Courier',monospace;
+  font-size: 16px;
+  font-weight: normal;
+  padding-top: 20px;
+  text-transform: uppercase;
+
+}
+/* h3 {
+  font-weight: normal;
+  text-decoration: underline;
+  font-size:16px;
+
+} */
+
+/* FONT SPAN styles */
+
+.tech, .highlight {
+  font-family: 'Courier Prime','Courier',monospace;
+  font-size: 16px;
+  color:white;
+  text-transform: uppercase;
+}
+
+
+
+
+.imageCaption {
+  font-family: 'Courier Prime','Courier',monospace;
+  font-size: 12px;
+  font-style:italic;
+  max-width: 400px;
+}
+
+::selection {
+  background:#222222;
+}
+/* .row {
+  border-bottom: 1px solid white;
+} */
+
+.item{
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  flex-wrap: wrap;
+  /* padding: 10px 0px; */
+  cursor: pointer;
+}
+
+.item:hover{
+  opacity:0.9;
+
+}
+
+/* .item-text {
+  font-family: 'Courier Prime','Courier',monospace;
+  font-size: 16px;
+  /* padding-left: 30px;
+  width:140px;
+} */
+
+.item-heading  {
+  padding: 16px 0px;
+}
+
+.item-heading, .header{
+  font-weight: normal;
+  /* font-family: Times, 'Times New Roman', serif; */
+  /* font-family: Arial, sans-serif; */
+  font-family: 'courier prime';
+
+  font-size:24px;
+}
+
+/* Closable button inside the container tab */
+/* .caret {
+  float: right;
+  color: black;
+  font-size: 24px;
+  margin-top: -70px;
+  padding: 10px;
+  cursor: pointer;
+} */
+
+.contents {
+  padding: 0px 0px 40px 0px;
+  max-width: 600px;
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+  body {
+    margin: 0 40px;
+  }
+
+
+  .imageCaption {
+    width:100%;
+  }
+
+  .item-heading{
+    width: 100%;
+    line-height: 40px;
+    padding: 0;
+
+  }
+  .contents{
+    margin-left: 0px;
+  }
+
+  .dueSchedule {
+    margin: 5px 0px 10px 0;
+}
+
+}
